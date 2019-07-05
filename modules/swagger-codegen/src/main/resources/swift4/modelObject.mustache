@@ -9,11 +9,11 @@ public struct {{classname}}: Codable {
 {{#allVars}}
 {{#isEnum}}
     {{#description}}/** {{description}} */
-    {{/description}}public var {{name}}: {{{datatypeWithEnum}}}{{^required}}?{{/required}}{{#defaultValue}} = {{{defaultValue}}}{{/defaultValue}}
+    {{/description}}public var {{name}}: {{{datatypeWithEnum}}}?{{#defaultValue}} = {{{defaultValue}}}{{/defaultValue}}
 {{/isEnum}}
 {{^isEnum}}
     {{#description}}/** {{description}} */
-    {{/description}}public var {{name}}: {{{datatype}}}{{^required}}?{{/required}}{{#defaultValue}} = {{{defaultValue}}}{{/defaultValue}}{{#objcCompatible}}{{#vendorExtensions.x-swift-optional-scalar}}
+    {{/description}}public var {{name}}: {{{datatype}}}?{{#defaultValue}} = {{{defaultValue}}}{{/defaultValue}}{{#objcCompatible}}{{#vendorExtensions.x-swift-optional-scalar}}
     public var {{name}}Num: NSNumber? {
         get {
             return {{name}}.map({ return NSNumber(value: $0) })
@@ -21,6 +21,11 @@ public struct {{classname}}: Codable {
     }{{/vendorExtensions.x-swift-optional-scalar}}{{/objcCompatible}}
 {{/isEnum}}
 {{/allVars}}
+
+{{#hasVars}}
+    public init() {
+    }
+{{/hasVars}}
 
 {{#hasVars}}
     public init({{#allVars}}{{name}}: {{{datatypeWithEnum}}}{{^required}}?{{/required}}{{#hasMore}}, {{/hasMore}}{{/allVars}}) {

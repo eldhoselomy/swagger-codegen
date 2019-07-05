@@ -69,7 +69,7 @@ extension Data: JSONEncodable {
 private let dateFormatter: DateFormatter = {
     let fmt = DateFormatter()
     fmt.dateFormat = Configuration.dateFormat
-    fmt.locale = Locale(identifier: "en_US_POSIX")
+    fmt.locale = Foundation.Locale(identifier: "en_US_POSIX")
     return fmt
 }()
 

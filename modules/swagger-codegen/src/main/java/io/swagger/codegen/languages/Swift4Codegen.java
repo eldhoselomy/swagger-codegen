@@ -140,7 +140,7 @@ public class Swift4Codegen extends DefaultCodegen implements CodegenConfig {
                     "ErrorResponse", "Response",
 
                     // Added for Objective-C compatibility
-                    "id", "description", "NSArray", "NSURL", "CGFloat", "NSSet", "NSString", "NSInteger", "NSUInteger",
+                     "description", "NSArray", "NSURL", "CGFloat", "NSSet", "NSString", "NSInteger", "NSUInteger",
                     "NSError", "NSDictionary", 
 
                     //
@@ -205,7 +205,7 @@ public class Swift4Codegen extends DefaultCodegen implements CodegenConfig {
         typeMapping.put("float", "Float");
         typeMapping.put("number", "Double");
         typeMapping.put("double", "Double");
-        typeMapping.put("object", "Any");
+        typeMapping.put("object", "String");
         typeMapping.put("file", "URL");
         typeMapping.put("binary", "Data");
         typeMapping.put("ByteArray", "Data");
