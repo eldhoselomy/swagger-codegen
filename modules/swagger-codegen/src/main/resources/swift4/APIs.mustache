@@ -10,8 +10,14 @@ import Foundation
 open class {{projectName}}API {
     open static var basePath = "{{{basePath}}}"
     open static var credential: URLCredential?
-    open static var customHeaders: [String:String] = [:]
     open static var requestBuilderFactory: RequestBuilderFactory = AlamofireRequestBuilderFactory()
+    open static var customHeaders: [String:String]{
+        return [
+            "requestId" :  UUID().uuidString,
+            "deviceId" : UIDevice.current.identifierForVendor?.uuidString ?? ""
+        ]
+    }
+
 }
 
 open class RequestBuilder<T> {
