@@ -125,7 +125,8 @@ samples/client/petstore/swift3/**/SwaggerClientTests/SwaggerClient.xcworkspace/x
 #samples/client/petstore/swift3/**/SwaggerClientTests/Pods/
 #samples/client/petstore/swift3/**/SwaggerClientTests/Pods/Pods.xcodeproj/xcuserdata
 #samples/client/petstore/swift3/**/SwaggerClientTests/Pods/Pods.xcodeproj/xcshareddata/xcschemes
-samples/client/petstore/swift3/**/SwaggerClientTests/Podfile.lock 
+samples/client/petstore/swift3/**/SwaggerClientTests/Podfile.lock
+Codegen/SwaggerClient/*
 
 # C#
 *.csproj.user

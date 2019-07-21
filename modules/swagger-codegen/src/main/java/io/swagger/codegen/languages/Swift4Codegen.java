@@ -40,6 +40,7 @@ import java.util.regex.Pattern;
 import javax.annotation.Nullable;
 
 public class Swift4Codegen extends DefaultCodegen implements CodegenConfig {
+    //./mvnw package  -DdescriptorId=jar-with-dependencies
     public static final String PROJECT_NAME = "projectName";
     public static final String RESPONSE_AS = "responseAs";
     public static final String UNWRAP_REQUIRED = "unwrapRequired";

@@ -11,10 +11,11 @@ open class {{projectName}}API {
     open static var basePath = "{{{basePath}}}"
     open static var credential: URLCredential?
     open static var requestBuilderFactory: RequestBuilderFactory = AlamofireRequestBuilderFactory()
+    private static let deviceID: String = UIDevice.current.identifierForVendor?.uuidString ?? ""
     open static var customHeaders: [String:String]{
         return [
             "requestId" :  UUID().uuidString,
-            "deviceId" : UIDevice.current.identifierForVendor?.uuidString ?? ""
+            "deviceId"  : deviceID
         ]
     }
 
