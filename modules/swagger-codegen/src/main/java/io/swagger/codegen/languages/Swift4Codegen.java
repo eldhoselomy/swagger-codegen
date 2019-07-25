@@ -206,7 +206,7 @@ public class Swift4Codegen extends DefaultCodegen implements CodegenConfig {
         typeMapping.put("float", "Float");
         typeMapping.put("number", "Double");
         typeMapping.put("double", "Double");
-        typeMapping.put("object", "String");
+        typeMapping.put("object", "JSONValue");
         typeMapping.put("file", "URL");
         typeMapping.put("binary", "Data");
         typeMapping.put("ByteArray", "Data");
@@ -332,6 +332,9 @@ public class Swift4Codegen extends DefaultCodegen implements CodegenConfig {
         supportingFiles.add(new SupportingFile("CodableHelper.mustache",
                                                sourceFolder,
                                                "CodableHelper.swift"));
+        supportingFiles.add(new SupportingFile("JSONValue.mustache",
+                sourceFolder,
+                "JSONValue.swift"));
         supportingFiles.add(new SupportingFile("JSONEncodableEncoding.mustache",
                                                sourceFolder,
                                                "JSONEncodableEncoding.swift"));
