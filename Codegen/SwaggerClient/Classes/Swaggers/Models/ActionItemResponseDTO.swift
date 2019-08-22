@@ -55,13 +55,12 @@ public struct ActionItemResponseDTO: Codable {
     public var ownerId: String?
     public var state: String?
     public var assignerName: String?
-    public var vitalContext: Vital?
     public var completed: Bool?
 
     public init() {
     }
 
-    public init(createdOn: Int64?, updatedOn: Int64?, tenantId: String?, applicationId: String?, archived: Bool?, externalId: String?, active: Bool?, id: String?, title: String?, type: String?, parameters: String?, parentType: ParentType?, startTime: Int64?, contextType: String?, contextId: String?, patientLongitude: Double?, postAction: String?, patientId: String?, patientName: String?, completedOn: Int64?, scheduledOn: Int64?, completedBy: String?, completedEntityId: String?, notes: String?, interventionId: String?, latitude: Double?, longitude: Double?, permissions: String?, endTime: Int64?, patientLatitude: Double?, ownerId: String?, state: String?, assignerName: String?, vitalContext: Vital?, completed: Bool?) {
+    public init(createdOn: Int64?, updatedOn: Int64?, tenantId: String?, applicationId: String?, archived: Bool?, externalId: String?, active: Bool?, id: String?, title: String?, type: String?, parameters: String?, parentType: ParentType?, startTime: Int64?, contextType: String?, contextId: String?, patientLongitude: Double?, postAction: String?, patientId: String?, patientName: String?, completedOn: Int64?, scheduledOn: Int64?, completedBy: String?, completedEntityId: String?, notes: String?, interventionId: String?, latitude: Double?, longitude: Double?, permissions: String?, endTime: Int64?, patientLatitude: Double?, ownerId: String?, state: String?, assignerName: String?, completed: Bool?) {
         self.createdOn = createdOn
         self.updatedOn = updatedOn
         self.tenantId = tenantId
@@ -95,7 +94,6 @@ public struct ActionItemResponseDTO: Codable {
         self.ownerId = ownerId
         self.state = state
         self.assignerName = assignerName
-        self.vitalContext = vitalContext
         self.completed = completed
     }
 

@@ -56,15 +56,15 @@ public struct TenantConfig: Codable {
     public var externalRepositoryConfigurarionList: [ExternalRepositoryConfigurarion]?
     public var activityConfig: ActivityConfig?
     public var referralSettings: ReferralSettings?
-    public var careplanEnabled: Bool?
-    public var leadsEnabled: Bool?
     public var engagementEnabled: Bool?
     public var pccEnabled: Bool?
+    public var leadsEnabled: Bool?
+    public var careplanEnabled: Bool?
 
     public init() {
     }
 
-    public init(createdOn: Int64?, updatedOn: Int64?, tenantId: String?, applicationId: String?, archived: Bool?, externalId: String?, active: Bool?, id: String?, tenantName: String?, configColor: ColorConfiguration?, logoURL: String?, faviconURL: String?, androidCaretakerAppConfig: AndroidConfig?, androidGuardianAppConfig: AndroidConfig?, androidPatientAppConfig: AndroidConfig?, iosCaretakerConfig: IOSConfig?, iosGuardianAppConfig: IOSConfig?, iosPatientAppConfig: IOSConfig?, dietConfig: DietConfig?, deviceConfigs: [DeviceConfig]?, reportConfigs: [ReportConfig]?, tenantSupport: TenantSupport?, featureConfigs: FeatureConfigs?, featureNomenclatures: FeatureNomenclatures?, templateConfig: TemplateConfig?, termsURL: String?, language: String?, supportedDeviceModels: [String]?, patientOnboardSettings: PatientOnboardSettings?, caretakerOnboardSettings: OnboardSettings?, adminOnboardSettings: OnboardSettings?, guardianOnboardSettings: OnboardSettings?, healthScoreConfig: HealthScoreConfig?, medicineSettings: MedicineSettings?, appointmentConfig: AppointmentConfig?, externalSystemIntegrationConfiguration: ExternalSystemIntegrationConfiguration?, countryCode: String?, featureConfig: FeatureConfig?, defaultMedicineSource: String?, billingConfig: BillingConfig?, menuConfig: MenuConfig?, externalRepositoryConfigurarionList: [ExternalRepositoryConfigurarion]?, activityConfig: ActivityConfig?, referralSettings: ReferralSettings?, careplanEnabled: Bool?, leadsEnabled: Bool?, engagementEnabled: Bool?, pccEnabled: Bool?) {
+    public init(createdOn: Int64?, updatedOn: Int64?, tenantId: String?, applicationId: String?, archived: Bool?, externalId: String?, active: Bool?, id: String?, tenantName: String?, configColor: ColorConfiguration?, logoURL: String?, faviconURL: String?, androidCaretakerAppConfig: AndroidConfig?, androidGuardianAppConfig: AndroidConfig?, androidPatientAppConfig: AndroidConfig?, iosCaretakerConfig: IOSConfig?, iosGuardianAppConfig: IOSConfig?, iosPatientAppConfig: IOSConfig?, dietConfig: DietConfig?, deviceConfigs: [DeviceConfig]?, reportConfigs: [ReportConfig]?, tenantSupport: TenantSupport?, featureConfigs: FeatureConfigs?, featureNomenclatures: FeatureNomenclatures?, templateConfig: TemplateConfig?, termsURL: String?, language: String?, supportedDeviceModels: [String]?, patientOnboardSettings: PatientOnboardSettings?, caretakerOnboardSettings: OnboardSettings?, adminOnboardSettings: OnboardSettings?, guardianOnboardSettings: OnboardSettings?, healthScoreConfig: HealthScoreConfig?, medicineSettings: MedicineSettings?, appointmentConfig: AppointmentConfig?, externalSystemIntegrationConfiguration: ExternalSystemIntegrationConfiguration?, countryCode: String?, featureConfig: FeatureConfig?, defaultMedicineSource: String?, billingConfig: BillingConfig?, menuConfig: MenuConfig?, externalRepositoryConfigurarionList: [ExternalRepositoryConfigurarion]?, activityConfig: ActivityConfig?, referralSettings: ReferralSettings?, engagementEnabled: Bool?, pccEnabled: Bool?, leadsEnabled: Bool?, careplanEnabled: Bool?) {
         self.createdOn = createdOn
         self.updatedOn = updatedOn
         self.tenantId = tenantId
@@ -109,10 +109,10 @@ public struct TenantConfig: Codable {
         self.externalRepositoryConfigurarionList = externalRepositoryConfigurarionList
         self.activityConfig = activityConfig
         self.referralSettings = referralSettings
-        self.careplanEnabled = careplanEnabled
-        self.leadsEnabled = leadsEnabled
         self.engagementEnabled = engagementEnabled
         self.pccEnabled = pccEnabled
+        self.leadsEnabled = leadsEnabled
+        self.careplanEnabled = careplanEnabled
     }
 
 

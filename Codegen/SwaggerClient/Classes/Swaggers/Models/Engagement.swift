@@ -17,6 +17,7 @@ public struct Engagement: Codable {
         case email = "EMAIL"
         case call = "CALL"
         case sms = "SMS"
+        case voip = "VOIP"
     }
     public var createdOn: Int64?
     public var updatedOn: Int64?

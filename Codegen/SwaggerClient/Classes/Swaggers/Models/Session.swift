@@ -20,6 +20,7 @@ public struct Session: Codable {
         case careTaker = "CARE_TAKER"
         case user = "USER"
         case groupAdmin = "GROUP_ADMIN"
+        case tenantAdmin = "TENANT_ADMIN"
     }
     public var createdOn: Int64?
     public var updatedOn: Int64?
@@ -31,11 +32,12 @@ public struct Session: Codable {
     public var id: String?
     public var userId: String?
     public var accountType: AccountType?
+    public var shouldChangePassword: Bool?
 
     public init() {
     }
 
-    public init(createdOn: Int64?, updatedOn: Int64?, tenantId: String?, applicationId: String?, archived: Bool?, externalId: String?, active: Bool?, id: String?, userId: String?, accountType: AccountType?) {
+    public init(createdOn: Int64?, updatedOn: Int64?, tenantId: String?, applicationId: String?, archived: Bool?, externalId: String?, active: Bool?, id: String?, userId: String?, accountType: AccountType?, shouldChangePassword: Bool?) {
         self.createdOn = createdOn
         self.updatedOn = updatedOn
         self.tenantId = tenantId
@@ -46,6 +48,7 @@ public struct Session: Codable {
         self.id = id
         self.userId = userId
         self.accountType = accountType
+        self.shouldChangePassword = shouldChangePassword
     }
 
 

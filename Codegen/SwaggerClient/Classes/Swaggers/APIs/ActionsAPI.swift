@@ -519,6 +519,7 @@ open class ActionsAPI {
     "completedActionItemCount" : 9
   } ],
   "offset" : 6,
+  "totalPages" : 3,
   "totalCount" : 0
 }}]
      

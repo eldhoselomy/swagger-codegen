@@ -116,6 +116,7 @@ open class Icd10API {
     "category" : "category"
   } ],
   "offset" : 6,
+  "totalPages" : 1,
   "totalCount" : 0
 }}]
      

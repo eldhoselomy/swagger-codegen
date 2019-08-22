@@ -54,6 +54,44 @@ open class TenantsAPI {
 
     /**
 
+     - parameter tagId: (path)  
+     - parameter completion: completion handler to receive the data and the error objects
+     */
+    open class func archiveTag(tagId: String, completion: @escaping ((_ data: Void?,_ error: Error?) -> Void)) {
+        archiveTagWithRequestBuilder(tagId: tagId).execute { (response, error) -> Void in
+            if error == nil {
+                completion((), error)
+            } else {
+                completion(nil, error)
+            }
+        }
+    }
+
+
+    /**
+     - DELETE /ehealth/v2/tenants/{tenantId}/tags/{tagId}
+     
+     - parameter tagId: (path)  
+
+     - returns: RequestBuilder<Void> 
+     */
+    open class func archiveTagWithRequestBuilder(tagId: String) -> RequestBuilder<Void> {
+        var path = "/ehealth/v2/tenants/{tenantId}/tags/{tagId}"
+        let tagIdPreEscape = "\(tagId)"
+        let tagIdPostEscape = tagIdPreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
+        path = path.replacingOccurrences(of: "{tagId}", with: tagIdPostEscape, options: .literal, range: nil)
+        let URLString = SwaggerClientAPI.basePath + path
+        let parameters: [String:Any]? = nil
+        
+        let url = URLComponents(string: URLString)
+
+        let requestBuilder: RequestBuilder<Void>.Type = SwaggerClientAPI.requestBuilderFactory.getNonDecodableBuilder()
+
+        return requestBuilder.init(method: "DELETE", URLString: (url?.string ?? URLString), parameters: parameters, isBody: false)
+    }
+
+    /**
+
      - parameter tenantId: (path)  
      - parameter xAuthToken: (header)  (optional)
      - parameter completion: completion handler to receive the data and the error objects
@@ -1176,8 +1214,8 @@ open class TenantsAPI {
   "featureConfig" : {
     "features" : [ {
       "portalEnabled" : false,
-      "androidCaretakerAPPEnabled" : false,
       "iosguardianAPPEnabled" : false,
+      "androidCaretakerAPPEnabled" : false,
       "androidPateintAPPEnabled" : false,
       "type" : "VITAL",
       "ioscaretakerAPPEnabled" : false,
@@ -1185,8 +1223,8 @@ open class TenantsAPI {
       "iospateintAPPEnabled" : false
     }, {
       "portalEnabled" : false,
-      "androidCaretakerAPPEnabled" : false,
       "iosguardianAPPEnabled" : false,
+      "androidCaretakerAPPEnabled" : false,
       "androidPateintAPPEnabled" : false,
       "type" : "VITAL",
       "ioscaretakerAPPEnabled" : false,
@@ -1228,6 +1266,9 @@ open class TenantsAPI {
       "name" : "name"
     },
     "services" : {
+      "name" : "name"
+    },
+    "guardians" : {
       "name" : "name"
     },
     "diets" : {
@@ -1630,8 +1671,8 @@ open class TenantsAPI {
   "featureConfig" : {
     "features" : [ {
       "portalEnabled" : false,
-      "androidCaretakerAPPEnabled" : false,
       "iosguardianAPPEnabled" : false,
+      "androidCaretakerAPPEnabled" : false,
       "androidPateintAPPEnabled" : false,
       "type" : "VITAL",
       "ioscaretakerAPPEnabled" : false,
@@ -1639,8 +1680,8 @@ open class TenantsAPI {
       "iospateintAPPEnabled" : false
     }, {
       "portalEnabled" : false,
-      "androidCaretakerAPPEnabled" : false,
       "iosguardianAPPEnabled" : false,
+      "androidCaretakerAPPEnabled" : false,
       "androidPateintAPPEnabled" : false,
       "type" : "VITAL",
       "ioscaretakerAPPEnabled" : false,
@@ -1682,6 +1723,9 @@ open class TenantsAPI {
       "name" : "name"
     },
     "services" : {
+      "name" : "name"
+    },
+    "guardians" : {
       "name" : "name"
     },
     "diets" : {
@@ -2510,8 +2554,8 @@ open class TenantsAPI {
   "featureConfig" : {
     "features" : [ {
       "portalEnabled" : false,
-      "androidCaretakerAPPEnabled" : false,
       "iosguardianAPPEnabled" : false,
+      "androidCaretakerAPPEnabled" : false,
       "androidPateintAPPEnabled" : false,
       "type" : "VITAL",
       "ioscaretakerAPPEnabled" : false,
@@ -2519,8 +2563,8 @@ open class TenantsAPI {
       "iospateintAPPEnabled" : false
     }, {
       "portalEnabled" : false,
-      "androidCaretakerAPPEnabled" : false,
       "iosguardianAPPEnabled" : false,
+      "androidCaretakerAPPEnabled" : false,
       "androidPateintAPPEnabled" : false,
       "type" : "VITAL",
       "ioscaretakerAPPEnabled" : false,
@@ -2562,6 +2606,9 @@ open class TenantsAPI {
       "name" : "name"
     },
     "services" : {
+      "name" : "name"
+    },
+    "guardians" : {
       "name" : "name"
     },
     "diets" : {
@@ -2969,8 +3016,8 @@ open class TenantsAPI {
   "featureConfig" : {
     "features" : [ {
       "portalEnabled" : false,
-      "androidCaretakerAPPEnabled" : false,
       "iosguardianAPPEnabled" : false,
+      "androidCaretakerAPPEnabled" : false,
       "androidPateintAPPEnabled" : false,
       "type" : "VITAL",
       "ioscaretakerAPPEnabled" : false,
@@ -2978,8 +3025,8 @@ open class TenantsAPI {
       "iospateintAPPEnabled" : false
     }, {
       "portalEnabled" : false,
-      "androidCaretakerAPPEnabled" : false,
       "iosguardianAPPEnabled" : false,
+      "androidCaretakerAPPEnabled" : false,
       "androidPateintAPPEnabled" : false,
       "type" : "VITAL",
       "ioscaretakerAPPEnabled" : false,
@@ -3021,6 +3068,9 @@ open class TenantsAPI {
       "name" : "name"
     },
     "services" : {
+      "name" : "name"
+    },
+    "guardians" : {
       "name" : "name"
     },
     "diets" : {
@@ -3764,8 +3814,8 @@ open class TenantsAPI {
   "featureConfig" : {
     "features" : [ {
       "portalEnabled" : false,
-      "androidCaretakerAPPEnabled" : false,
       "iosguardianAPPEnabled" : false,
+      "androidCaretakerAPPEnabled" : false,
       "androidPateintAPPEnabled" : false,
       "type" : "VITAL",
       "ioscaretakerAPPEnabled" : false,
@@ -3773,8 +3823,8 @@ open class TenantsAPI {
       "iospateintAPPEnabled" : false
     }, {
       "portalEnabled" : false,
-      "androidCaretakerAPPEnabled" : false,
       "iosguardianAPPEnabled" : false,
+      "androidCaretakerAPPEnabled" : false,
       "androidPateintAPPEnabled" : false,
       "type" : "VITAL",
       "ioscaretakerAPPEnabled" : false,
@@ -3816,6 +3866,9 @@ open class TenantsAPI {
       "name" : "name"
     },
     "services" : {
+      "name" : "name"
+    },
+    "guardians" : {
       "name" : "name"
     },
     "diets" : {
@@ -4318,8 +4371,8 @@ open class TenantsAPI {
   "featureConfig" : {
     "features" : [ {
       "portalEnabled" : false,
-      "androidCaretakerAPPEnabled" : false,
       "iosguardianAPPEnabled" : false,
+      "androidCaretakerAPPEnabled" : false,
       "androidPateintAPPEnabled" : false,
       "type" : "VITAL",
       "ioscaretakerAPPEnabled" : false,
@@ -4327,8 +4380,8 @@ open class TenantsAPI {
       "iospateintAPPEnabled" : false
     }, {
       "portalEnabled" : false,
-      "androidCaretakerAPPEnabled" : false,
       "iosguardianAPPEnabled" : false,
+      "androidCaretakerAPPEnabled" : false,
       "androidPateintAPPEnabled" : false,
       "type" : "VITAL",
       "ioscaretakerAPPEnabled" : false,
@@ -4370,6 +4423,9 @@ open class TenantsAPI {
       "name" : "name"
     },
     "services" : {
+      "name" : "name"
+    },
+    "guardians" : {
       "name" : "name"
     },
     "diets" : {
@@ -4773,8 +4829,8 @@ open class TenantsAPI {
   "featureConfig" : {
     "features" : [ {
       "portalEnabled" : false,
-      "androidCaretakerAPPEnabled" : false,
       "iosguardianAPPEnabled" : false,
+      "androidCaretakerAPPEnabled" : false,
       "androidPateintAPPEnabled" : false,
       "type" : "VITAL",
       "ioscaretakerAPPEnabled" : false,
@@ -4782,8 +4838,8 @@ open class TenantsAPI {
       "iospateintAPPEnabled" : false
     }, {
       "portalEnabled" : false,
-      "androidCaretakerAPPEnabled" : false,
       "iosguardianAPPEnabled" : false,
+      "androidCaretakerAPPEnabled" : false,
       "androidPateintAPPEnabled" : false,
       "type" : "VITAL",
       "ioscaretakerAPPEnabled" : false,
@@ -4825,6 +4881,9 @@ open class TenantsAPI {
       "name" : "name"
     },
     "services" : {
+      "name" : "name"
+    },
+    "guardians" : {
       "name" : "name"
     },
     "diets" : {

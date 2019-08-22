@@ -37,13 +37,13 @@ public struct FactDTO: Codable {
     public var changeId: String?
     public var actorUser: User?
     public var forUser: User?
-    public var entity: String?
+    public var entity: JSONValue?
     public var change: Change?
 
     public init() {
     }
 
-    public init(id: String?, actorId: String?, entityId: String?, forId: String?, timestamp: Int64?, type: ModelType?, changeId: String?, actorUser: User?, forUser: User?, entity: String?, change: Change?) {
+    public init(id: String?, actorId: String?, entityId: String?, forId: String?, timestamp: Int64?, type: ModelType?, changeId: String?, actorUser: User?, forUser: User?, entity: JSONValue?, change: Change?) {
         self.id = id
         self.actorId = actorId
         self.entityId = entityId

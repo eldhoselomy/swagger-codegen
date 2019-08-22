@@ -31,9 +31,11 @@ open class AlertsAPI {
   "closedBy" : "closedBy",
   "notes" : "notes",
   "patientId" : "patientId",
+  "entityType" : "entityType",
   "closedOn" : 1,
   "externalId" : "externalId",
   "active" : false,
+  "entityId" : "entityId",
   "updatedOn" : 6,
   "message" : "message",
   "type" : "type",
@@ -75,26 +77,27 @@ open class AlertsAPI {
 
     /**
 
-     - parameter notifierId: (path)  
-     - parameter xAuthToken: (header)  (optional)
+     - parameter patientId: (path)  
      - parameter completion: completion handler to receive the data and the error objects
      */
-    open class func getAlertForNotifier(notifierId: String, xAuthToken: String? = nil, completion: @escaping ((_ data: [Alert]?,_ error: Error?) -> Void)) {
-        getAlertForNotifierWithRequestBuilder(notifierId: notifierId, xAuthToken: xAuthToken).execute { (response, error) -> Void in
+    open class func getAlertForNotifier(patientId: String, completion: @escaping ((_ data: [Alert]?,_ error: Error?) -> Void)) {
+        getAlertForNotifierWithRequestBuilder(patientId: patientId).execute { (response, error) -> Void in
             completion(response?.body, error)
         }
     }
 
 
     /**
-     - GET /ehealth/v2/alerts/notifier/{notifierId}
+     - GET /ehealth/v2/alerts/patients/{patientId}
      - examples: [{contentType=application/json, example=[ {
   "closedBy" : "closedBy",
   "notes" : "notes",
   "patientId" : "patientId",
+  "entityType" : "entityType",
   "closedOn" : 1,
   "externalId" : "externalId",
   "active" : false,
+  "entityId" : "entityId",
   "updatedOn" : 6,
   "message" : "message",
   "type" : "type",
@@ -112,9 +115,11 @@ open class AlertsAPI {
   "closedBy" : "closedBy",
   "notes" : "notes",
   "patientId" : "patientId",
+  "entityType" : "entityType",
   "closedOn" : 1,
   "externalId" : "externalId",
   "active" : false,
+  "entityId" : "entityId",
   "updatedOn" : 6,
   "message" : "message",
   "type" : "type",
@@ -130,28 +135,23 @@ open class AlertsAPI {
   "status" : "status"
 } ]}]
      
-     - parameter notifierId: (path)  
-     - parameter xAuthToken: (header)  (optional)
+     - parameter patientId: (path)  
 
      - returns: RequestBuilder<[Alert]> 
      */
-    open class func getAlertForNotifierWithRequestBuilder(notifierId: String, xAuthToken: String? = nil) -> RequestBuilder<[Alert]> {
-        var path = "/ehealth/v2/alerts/notifier/{notifierId}"
-        let notifierIdPreEscape = "\(notifierId)"
-        let notifierIdPostEscape = notifierIdPreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
-        path = path.replacingOccurrences(of: "{notifierId}", with: notifierIdPostEscape, options: .literal, range: nil)
+    open class func getAlertForNotifierWithRequestBuilder(patientId: String) -> RequestBuilder<[Alert]> {
+        var path = "/ehealth/v2/alerts/patients/{patientId}"
+        let patientIdPreEscape = "\(patientId)"
+        let patientIdPostEscape = patientIdPreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
+        path = path.replacingOccurrences(of: "{patientId}", with: patientIdPostEscape, options: .literal, range: nil)
         let URLString = SwaggerClientAPI.basePath + path
         let parameters: [String:Any]? = nil
         
         let url = URLComponents(string: URLString)
-        let nillableHeaders: [String: Any?] = [
-            "X-Auth-Token": xAuthToken
-        ]
-        let headerParameters = APIHelper.rejectNilHeaders(nillableHeaders)
 
         let requestBuilder: RequestBuilder<[Alert]>.Type = SwaggerClientAPI.requestBuilderFactory.getBuilder()
 
-        return requestBuilder.init(method: "GET", URLString: (url?.string ?? URLString), parameters: parameters, isBody: false, headers: headerParameters)
+        return requestBuilder.init(method: "GET", URLString: (url?.string ?? URLString), parameters: parameters, isBody: false)
     }
 
     /**
@@ -173,9 +173,11 @@ open class AlertsAPI {
   "closedBy" : "closedBy",
   "notes" : "notes",
   "patientId" : "patientId",
+  "entityType" : "entityType",
   "closedOn" : 1,
   "externalId" : "externalId",
   "active" : false,
+  "entityId" : "entityId",
   "updatedOn" : 6,
   "message" : "message",
   "type" : "type",
@@ -193,9 +195,11 @@ open class AlertsAPI {
   "closedBy" : "closedBy",
   "notes" : "notes",
   "patientId" : "patientId",
+  "entityType" : "entityType",
   "closedOn" : 1,
   "externalId" : "externalId",
   "active" : false,
+  "entityId" : "entityId",
   "updatedOn" : 6,
   "message" : "message",
   "type" : "type",
@@ -298,9 +302,11 @@ open class AlertsAPI {
   "closedBy" : "closedBy",
   "notes" : "notes",
   "patientId" : "patientId",
+  "entityType" : "entityType",
   "closedOn" : 1,
   "externalId" : "externalId",
   "active" : false,
+  "entityId" : "entityId",
   "updatedOn" : 6,
   "message" : "message",
   "type" : "type",

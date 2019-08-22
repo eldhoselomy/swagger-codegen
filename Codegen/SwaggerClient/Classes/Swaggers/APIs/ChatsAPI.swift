@@ -74,7 +74,8 @@ open class ChatsAPI {
     }
 
     /**
-
+     Create a message to a session
+     
      - parameter body: (body)  (optional)
      - parameter completion: completion handler to receive the data and the error objects
      */
@@ -86,7 +87,9 @@ open class ChatsAPI {
 
 
     /**
+     Create a message to a session
      - POST /ehealth/v2/chats/messages
+     - 
      - examples: [{contentType=application/json, example={
   "fromUserId" : "fromUserId",
   "externalId" : "externalId",
@@ -239,6 +242,64 @@ open class ChatsAPI {
         let requestBuilder: RequestBuilder<ChatSession>.Type = SwaggerClientAPI.requestBuilderFactory.getBuilder()
 
         return requestBuilder.init(method: "DELETE", URLString: (url?.string ?? URLString), parameters: parameters, isBody: false, headers: headerParameters)
+    }
+
+    /**
+     Get Individual Chat Session between two Users
+     
+     - parameter userId1: (path)  
+     - parameter userId2: (path)  
+     - parameter completion: completion handler to receive the data and the error objects
+     */
+    open class func getIndividualChatSessionsBetweenTwoUsers(userId1: String, userId2: String, completion: @escaping ((_ data: ChatSession?,_ error: Error?) -> Void)) {
+        getIndividualChatSessionsBetweenTwoUsersWithRequestBuilder(userId1: userId1, userId2: userId2).execute { (response, error) -> Void in
+            completion(response?.body, error)
+        }
+    }
+
+
+    /**
+     Get Individual Chat Session between two Users
+     - GET /ehealth/v2/chats/sessions/individual/between/{userId1}/{userId2}
+     - 
+     - examples: [{contentType=application/json, example={
+  "externalId" : "externalId",
+  "active" : false,
+  "contextId" : "contextId",
+  "updatedOn" : 6,
+  "recentMessageOn" : 1,
+  "ownerId" : "ownerId",
+  "type" : "INDIVIDUAL",
+  "createdOn" : 0,
+  "archived" : false,
+  "contextType" : "contextType",
+  "tenantId" : "tenantId",
+  "name" : "name",
+  "id" : "id",
+  "applicationId" : "applicationId"
+}}]
+     
+     - parameter userId1: (path)  
+     - parameter userId2: (path)  
+
+     - returns: RequestBuilder<ChatSession> 
+     */
+    open class func getIndividualChatSessionsBetweenTwoUsersWithRequestBuilder(userId1: String, userId2: String) -> RequestBuilder<ChatSession> {
+        var path = "/ehealth/v2/chats/sessions/individual/between/{userId1}/{userId2}"
+        let userId1PreEscape = "\(userId1)"
+        let userId1PostEscape = userId1PreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
+        path = path.replacingOccurrences(of: "{userId1}", with: userId1PostEscape, options: .literal, range: nil)
+        let userId2PreEscape = "\(userId2)"
+        let userId2PostEscape = userId2PreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
+        path = path.replacingOccurrences(of: "{userId2}", with: userId2PostEscape, options: .literal, range: nil)
+        let URLString = SwaggerClientAPI.basePath + path
+        let parameters: [String:Any]? = nil
+        
+        let url = URLComponents(string: URLString)
+
+        let requestBuilder: RequestBuilder<ChatSession>.Type = SwaggerClientAPI.requestBuilderFactory.getBuilder()
+
+        return requestBuilder.init(method: "GET", URLString: (url?.string ?? URLString), parameters: parameters, isBody: false)
     }
 
     /**

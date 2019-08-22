@@ -24,11 +24,14 @@ public struct CareplanUpdateRequestDTO: Codable {
     public var removedInterventions: [String]?
     public var addedInterventions: [InterventionBluePrintRequest]?
     public var modifiedInterventions: [InterventionRequestDTO]?
+    public var userMedicines: [UserMedicine]?
+    public var editedUserMedicines: [UserMedicine]?
+    public var removedMedicines: [String]?
 
     public init() {
     }
 
-    public init(careplanId: String?, patientId: String, careplanStartTime: Int64?, careplanEndTime: Int64?, assignedOn: Int64?, assignerId: String, careplanTitle: String?, reasonForChange: String?, careplanBlueprint: CareplanBlueprint, removedInterventions: [String]?, addedInterventions: [InterventionBluePrintRequest]?, modifiedInterventions: [InterventionRequestDTO]?) {
+    public init(careplanId: String?, patientId: String, careplanStartTime: Int64?, careplanEndTime: Int64?, assignedOn: Int64?, assignerId: String, careplanTitle: String?, reasonForChange: String?, careplanBlueprint: CareplanBlueprint, removedInterventions: [String]?, addedInterventions: [InterventionBluePrintRequest]?, modifiedInterventions: [InterventionRequestDTO]?, userMedicines: [UserMedicine]?, editedUserMedicines: [UserMedicine]?, removedMedicines: [String]?) {
         self.careplanId = careplanId
         self.patientId = patientId
         self.careplanStartTime = careplanStartTime
@@ -41,6 +44,9 @@ public struct CareplanUpdateRequestDTO: Codable {
         self.removedInterventions = removedInterventions
         self.addedInterventions = addedInterventions
         self.modifiedInterventions = modifiedInterventions
+        self.userMedicines = userMedicines
+        self.editedUserMedicines = editedUserMedicines
+        self.removedMedicines = removedMedicines
     }
 
 

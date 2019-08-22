@@ -20,6 +20,7 @@ public struct CreateSessionRequest: Codable {
         case careTaker = "CARE_TAKER"
         case user = "USER"
         case groupAdmin = "GROUP_ADMIN"
+        case tenantAdmin = "TENANT_ADMIN"
     }
     public enum AuthenticationType: String, Codable { 
         case email = "EMAIL"

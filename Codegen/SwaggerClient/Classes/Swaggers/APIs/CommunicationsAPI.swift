@@ -142,6 +142,7 @@ open class CommunicationsAPI {
       },
       "mobile" : "mobile",
       "externalId" : "externalId",
+      "fullName" : "fullName",
       "dateOfBirth" : 1,
       "room" : "room",
       "additionalInfoList" : [ {
@@ -297,6 +298,7 @@ open class CommunicationsAPI {
       },
       "mobile" : "mobile",
       "externalId" : "externalId",
+      "fullName" : "fullName",
       "dateOfBirth" : 1,
       "room" : "room",
       "additionalInfoList" : [ {
@@ -453,6 +455,7 @@ open class CommunicationsAPI {
       },
       "mobile" : "mobile",
       "externalId" : "externalId",
+      "fullName" : "fullName",
       "dateOfBirth" : 1,
       "room" : "room",
       "additionalInfoList" : [ {
@@ -609,6 +612,7 @@ open class CommunicationsAPI {
       },
       "mobile" : "mobile",
       "externalId" : "externalId",
+      "fullName" : "fullName",
       "dateOfBirth" : 1,
       "room" : "room",
       "additionalInfoList" : [ {
@@ -764,6 +768,7 @@ open class CommunicationsAPI {
       },
       "mobile" : "mobile",
       "externalId" : "externalId",
+      "fullName" : "fullName",
       "dateOfBirth" : 1,
       "room" : "room",
       "additionalInfoList" : [ {
@@ -962,6 +967,7 @@ open class CommunicationsAPI {
       },
       "mobile" : "mobile",
       "externalId" : "externalId",
+      "fullName" : "fullName",
       "dateOfBirth" : 1,
       "room" : "room",
       "additionalInfoList" : [ {
@@ -1117,6 +1123,7 @@ open class CommunicationsAPI {
       },
       "mobile" : "mobile",
       "externalId" : "externalId",
+      "fullName" : "fullName",
       "dateOfBirth" : 1,
       "room" : "room",
       "additionalInfoList" : [ {
@@ -1273,6 +1280,7 @@ open class CommunicationsAPI {
       },
       "mobile" : "mobile",
       "externalId" : "externalId",
+      "fullName" : "fullName",
       "dateOfBirth" : 1,
       "room" : "room",
       "additionalInfoList" : [ {
@@ -1430,6 +1438,7 @@ open class CommunicationsAPI {
       },
       "mobile" : "mobile",
       "externalId" : "externalId",
+      "fullName" : "fullName",
       "dateOfBirth" : 1,
       "room" : "room",
       "additionalInfoList" : [ {
@@ -1585,6 +1594,7 @@ open class CommunicationsAPI {
       },
       "mobile" : "mobile",
       "externalId" : "externalId",
+      "fullName" : "fullName",
       "dateOfBirth" : 1,
       "room" : "room",
       "additionalInfoList" : [ {
@@ -1741,6 +1751,7 @@ open class CommunicationsAPI {
       },
       "mobile" : "mobile",
       "externalId" : "externalId",
+      "fullName" : "fullName",
       "dateOfBirth" : 1,
       "room" : "room",
       "additionalInfoList" : [ {

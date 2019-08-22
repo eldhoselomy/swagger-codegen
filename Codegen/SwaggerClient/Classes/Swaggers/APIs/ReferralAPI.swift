@@ -370,6 +370,7 @@ open class ReferralAPI {
     "status" : "PRELIM_PENDING"
   } ],
   "offset" : 6,
+  "totalPages" : 5,
   "totalCount" : 0
 }}]
      
@@ -730,6 +731,7 @@ open class ReferralAPI {
     } ]
   } ],
   "offset" : 6,
+  "totalPages" : 7,
   "totalCount" : 0
 }}]
      

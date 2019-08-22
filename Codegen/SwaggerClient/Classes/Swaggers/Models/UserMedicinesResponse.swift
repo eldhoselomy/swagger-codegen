@@ -12,15 +12,17 @@ import Foundation
 
 public struct UserMedicinesResponse: Codable {
 
-    public var medInfo: UserMedicineResponseDTO?
+    public var medInfo: UserMedicine?
     public var adherenceReport: MedicineAdherence?
+    public var assignerName: String?
 
     public init() {
     }
 
-    public init(medInfo: UserMedicineResponseDTO?, adherenceReport: MedicineAdherence?) {
+    public init(medInfo: UserMedicine?, adherenceReport: MedicineAdherence?, assignerName: String?) {
         self.medInfo = medInfo
         self.adherenceReport = adherenceReport
+        self.assignerName = assignerName
     }
 
 

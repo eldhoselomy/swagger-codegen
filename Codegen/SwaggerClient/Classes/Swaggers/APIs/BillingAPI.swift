@@ -404,6 +404,7 @@ open class BillingAPI {
         case careTaker = "CARE_TAKER"
         case user = "USER"
         case groupAdmin = "GROUP_ADMIN"
+        case tenantAdmin = "TENANT_ADMIN"
     }
 
     /**

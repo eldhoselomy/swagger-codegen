@@ -20,6 +20,7 @@ public struct AppointmentPOSTRequest: Codable {
         case careTaker = "CARE_TAKER"
         case user = "USER"
         case groupAdmin = "GROUP_ADMIN"
+        case tenantAdmin = "TENANT_ADMIN"
     }
     public var title: String?
     public var _description: String?

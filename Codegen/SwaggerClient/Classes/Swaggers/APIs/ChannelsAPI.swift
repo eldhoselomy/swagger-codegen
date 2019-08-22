@@ -28,17 +28,18 @@ open class ChannelsAPI {
      - POST /ehealth/v2/channels
      - examples: [{contentType=application/json, example={
   "sourceId" : "sourceId",
-  "archived" : false,
-  "tenantId" : "tenantId",
   "externalId" : "externalId",
   "active" : false,
   "updatedOn" : 6,
-  "id" : "id",
   "source" : "source",
-  "applicationId" : "applicationId",
   "type" : "NOTIFICATION",
   "createdOn" : 0,
-  "userId" : "userId"
+  "userId" : "userId",
+  "deviceId" : "deviceId",
+  "archived" : false,
+  "tenantId" : "tenantId",
+  "id" : "id",
+  "applicationId" : "applicationId"
 }}]
      
      - parameter body: (body)  (optional)
@@ -74,30 +75,32 @@ open class ChannelsAPI {
      - GET /ehealth/v2/channels/{userId}
      - examples: [{contentType=application/json, example=[ {
   "sourceId" : "sourceId",
-  "archived" : false,
-  "tenantId" : "tenantId",
   "externalId" : "externalId",
   "active" : false,
   "updatedOn" : 6,
-  "id" : "id",
   "source" : "source",
-  "applicationId" : "applicationId",
   "type" : "NOTIFICATION",
   "createdOn" : 0,
-  "userId" : "userId"
+  "userId" : "userId",
+  "deviceId" : "deviceId",
+  "archived" : false,
+  "tenantId" : "tenantId",
+  "id" : "id",
+  "applicationId" : "applicationId"
 }, {
   "sourceId" : "sourceId",
-  "archived" : false,
-  "tenantId" : "tenantId",
   "externalId" : "externalId",
   "active" : false,
   "updatedOn" : 6,
-  "id" : "id",
   "source" : "source",
-  "applicationId" : "applicationId",
   "type" : "NOTIFICATION",
   "createdOn" : 0,
-  "userId" : "userId"
+  "userId" : "userId",
+  "deviceId" : "deviceId",
+  "archived" : false,
+  "tenantId" : "tenantId",
+  "id" : "id",
+  "applicationId" : "applicationId"
 } ]}]
      
      - parameter userId: (path)  

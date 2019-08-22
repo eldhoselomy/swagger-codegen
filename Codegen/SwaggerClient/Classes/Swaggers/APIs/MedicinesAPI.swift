@@ -161,10 +161,10 @@ open class MedicinesAPI {
      - parameter userId: (path)  
      - parameter xAuthToken: (header)  (optional)
      - parameter offset: (query)  (optional, default to 0)
-     - parameter limit: (query)  (optional, default to 0)
+     - parameter limit: (query)  (optional, default to 10)
      - parameter completion: completion handler to receive the data and the error objects
      */
-    open class func callGet(userId: String, xAuthToken: String? = nil, offset: Int? = nil, limit: Int? = nil, completion: @escaping ((_ data: [UserMedicinesResponse]?,_ error: Error?) -> Void)) {
+    open class func callGet(userId: String, xAuthToken: String? = nil, offset: Int? = nil, limit: Int? = nil, completion: @escaping ((_ data: PagedResultUserMedicinesResponse?,_ error: Error?) -> Void)) {
         callGetWithRequestBuilder(userId: userId, xAuthToken: xAuthToken, offset: offset, limit: limit).execute { (response, error) -> Void in
             completion(response?.body, error)
         }
@@ -173,290 +173,295 @@ open class MedicinesAPI {
 
     /**
      - GET /ehealth/v2/medicines/users/{userId}/medstats
-     - examples: [{contentType=application/json, example=[ {
-  "adherenceReport" : {
-    "onTrack" : false,
-    "notTakenCount" : 9,
-    "careplanEnabled" : false,
-    "percentage" : 2.3021358869347655,
-    "takenCount" : 7,
-    "careplanId" : "careplanId",
-    "userMedicineId" : "userMedicineId",
-    "message" : "message",
-    "userId" : "userId",
-    "interventionId" : "interventionId",
-    "medicineName" : "medicineName"
-  },
-  "medInfo" : {
-    "reminders" : [ {
-      "activeDays" : [ true, true ],
-      "timeOfDay" : "timeOfDay"
-    }, {
-      "activeDays" : [ true, true ],
-      "timeOfDay" : "timeOfDay"
-    } ],
-    "sourceId" : "sourceId",
-    "notes" : "notes",
-    "color" : "color",
-    "reasonToDiscontinue" : "reasonToDiscontinue",
-    "scheduled" : false,
-    "dosages" : [ {
-      "schedule" : {
-        "endDate" : 9,
-        "occuranceStartTime" : "occuranceStartTime",
-        "occuranceEndTime" : "occuranceEndTime",
-        "externalId" : "externalId",
-        "active" : false,
-        "repeatedEvent" : false,
-        "updatedOn" : 5,
-        "createdOn" : 4,
-        "scheduleFor" : "CAREPLAN",
-        "archived" : false,
-        "allDayEvent" : false,
-        "attendeesList" : [ "attendeesList", "attendeesList" ],
-        "repeat" : {
-          "summary" : "summary",
-          "occuranceType" : "NO_OF_DAYS",
-          "occurances" : "occurances",
-          "type" : "DAILY",
-          "repeatOn" : {
-            "sunday" : false,
-            "saturday" : false,
-            "tuesday" : false,
-            "wednesday" : false,
-            "thursday" : false,
-            "friday" : false,
-            "monday" : false
-          },
-          "startDate" : 8,
-          "frequency" : 6
-        },
-        "tenantId" : "tenantId",
-        "name" : "name",
-        "id" : "id",
-        "applicationId" : "applicationId",
-        "startDate" : 9,
-        "assignerId" : "assignerId"
-      },
-      "unit" : "unit",
-      "quantity" : "quantity",
-      "type" : "TABLET"
-    }, {
-      "schedule" : {
-        "endDate" : 9,
-        "occuranceStartTime" : "occuranceStartTime",
-        "occuranceEndTime" : "occuranceEndTime",
-        "externalId" : "externalId",
-        "active" : false,
-        "repeatedEvent" : false,
-        "updatedOn" : 5,
-        "createdOn" : 4,
-        "scheduleFor" : "CAREPLAN",
-        "archived" : false,
-        "allDayEvent" : false,
-        "attendeesList" : [ "attendeesList", "attendeesList" ],
-        "repeat" : {
-          "summary" : "summary",
-          "occuranceType" : "NO_OF_DAYS",
-          "occurances" : "occurances",
-          "type" : "DAILY",
-          "repeatOn" : {
-            "sunday" : false,
-            "saturday" : false,
-            "tuesday" : false,
-            "wednesday" : false,
-            "thursday" : false,
-            "friday" : false,
-            "monday" : false
-          },
-          "startDate" : 8,
-          "frequency" : 6
-        },
-        "tenantId" : "tenantId",
-        "name" : "name",
-        "id" : "id",
-        "applicationId" : "applicationId",
-        "startDate" : 9,
-        "assignerId" : "assignerId"
-      },
-      "unit" : "unit",
-      "quantity" : "quantity",
-      "type" : "TABLET"
-    } ],
-    "description" : "description",
-    "source" : "CAREPLAN",
-    "createdOn" : 0,
-    "archived" : false,
-    "permissions" : "permissions",
-    "id" : "id",
-    "careplanId" : "careplanId",
+     - examples: [{contentType=application/json, example={
+  "result" : [ {
     "assignerName" : "assignerName",
-    "shape" : "shape",
-    "discontinuedOn" : 5,
-    "medicineId" : "medicineId",
-    "externalId" : "externalId",
-    "active" : false,
-    "updatedOn" : 6,
-    "discontinuedBy" : "discontinuedBy",
-    "userId" : "userId",
-    "prn" : false,
-    "addedOn" : 1,
-    "instruction" : "instruction",
-    "tenantId" : "tenantId",
-    "name" : "name",
-    "toBeTakenTill" : 5,
-    "applicationId" : "applicationId",
-    "interventionId" : "interventionId",
-    "assignerId" : "assignerId",
-    "status" : "ACTIVE"
-  }
-}, {
-  "adherenceReport" : {
-    "onTrack" : false,
-    "notTakenCount" : 9,
-    "careplanEnabled" : false,
-    "percentage" : 2.3021358869347655,
-    "takenCount" : 7,
-    "careplanId" : "careplanId",
-    "userMedicineId" : "userMedicineId",
-    "message" : "message",
-    "userId" : "userId",
-    "interventionId" : "interventionId",
-    "medicineName" : "medicineName"
-  },
-  "medInfo" : {
-    "reminders" : [ {
-      "activeDays" : [ true, true ],
-      "timeOfDay" : "timeOfDay"
-    }, {
-      "activeDays" : [ true, true ],
-      "timeOfDay" : "timeOfDay"
-    } ],
-    "sourceId" : "sourceId",
-    "notes" : "notes",
-    "color" : "color",
-    "reasonToDiscontinue" : "reasonToDiscontinue",
-    "scheduled" : false,
-    "dosages" : [ {
-      "schedule" : {
-        "endDate" : 9,
-        "occuranceStartTime" : "occuranceStartTime",
-        "occuranceEndTime" : "occuranceEndTime",
-        "externalId" : "externalId",
-        "active" : false,
-        "repeatedEvent" : false,
-        "updatedOn" : 5,
-        "createdOn" : 4,
-        "scheduleFor" : "CAREPLAN",
-        "archived" : false,
-        "allDayEvent" : false,
-        "attendeesList" : [ "attendeesList", "attendeesList" ],
-        "repeat" : {
-          "summary" : "summary",
-          "occuranceType" : "NO_OF_DAYS",
-          "occurances" : "occurances",
-          "type" : "DAILY",
-          "repeatOn" : {
-            "sunday" : false,
-            "saturday" : false,
-            "tuesday" : false,
-            "wednesday" : false,
-            "thursday" : false,
-            "friday" : false,
-            "monday" : false
+    "adherenceReport" : {
+      "onTrack" : false,
+      "notTakenCount" : 5,
+      "careplanEnabled" : false,
+      "percentage" : 1.4658129805029452,
+      "takenCount" : 5,
+      "careplanId" : "careplanId",
+      "userMedicineId" : "userMedicineId",
+      "message" : "message",
+      "userId" : "userId",
+      "interventionId" : "interventionId",
+      "medicineName" : "medicineName"
+    },
+    "medInfo" : {
+      "reminders" : [ {
+        "activeDays" : [ true, true ],
+        "timeOfDay" : "timeOfDay"
+      }, {
+        "activeDays" : [ true, true ],
+        "timeOfDay" : "timeOfDay"
+      } ],
+      "sourceId" : "sourceId",
+      "notes" : "notes",
+      "color" : "color",
+      "reasonToDiscontinue" : "reasonToDiscontinue",
+      "scheduled" : false,
+      "dosages" : [ {
+        "schedule" : {
+          "endDate" : 9,
+          "occuranceStartTime" : "occuranceStartTime",
+          "occuranceEndTime" : "occuranceEndTime",
+          "externalId" : "externalId",
+          "active" : false,
+          "repeatedEvent" : false,
+          "updatedOn" : 5,
+          "createdOn" : 4,
+          "scheduleFor" : "CAREPLAN",
+          "archived" : false,
+          "allDayEvent" : false,
+          "attendeesList" : [ "attendeesList", "attendeesList" ],
+          "repeat" : {
+            "summary" : "summary",
+            "occuranceType" : "NO_OF_DAYS",
+            "occurances" : "occurances",
+            "type" : "DAILY",
+            "repeatOn" : {
+              "sunday" : false,
+              "saturday" : false,
+              "tuesday" : false,
+              "wednesday" : false,
+              "thursday" : false,
+              "friday" : false,
+              "monday" : false
+            },
+            "startDate" : 8,
+            "frequency" : 6
           },
-          "startDate" : 8,
-          "frequency" : 6
+          "tenantId" : "tenantId",
+          "name" : "name",
+          "id" : "id",
+          "applicationId" : "applicationId",
+          "startDate" : 9,
+          "assignerId" : "assignerId"
         },
-        "tenantId" : "tenantId",
-        "name" : "name",
-        "id" : "id",
-        "applicationId" : "applicationId",
-        "startDate" : 9,
-        "assignerId" : "assignerId"
-      },
-      "unit" : "unit",
-      "quantity" : "quantity",
-      "type" : "TABLET"
-    }, {
-      "schedule" : {
-        "endDate" : 9,
-        "occuranceStartTime" : "occuranceStartTime",
-        "occuranceEndTime" : "occuranceEndTime",
-        "externalId" : "externalId",
-        "active" : false,
-        "repeatedEvent" : false,
-        "updatedOn" : 5,
-        "createdOn" : 4,
-        "scheduleFor" : "CAREPLAN",
-        "archived" : false,
-        "allDayEvent" : false,
-        "attendeesList" : [ "attendeesList", "attendeesList" ],
-        "repeat" : {
-          "summary" : "summary",
-          "occuranceType" : "NO_OF_DAYS",
-          "occurances" : "occurances",
-          "type" : "DAILY",
-          "repeatOn" : {
-            "sunday" : false,
-            "saturday" : false,
-            "tuesday" : false,
-            "wednesday" : false,
-            "thursday" : false,
-            "friday" : false,
-            "monday" : false
+        "unit" : "unit",
+        "quantity" : "quantity",
+        "type" : "TABLET"
+      }, {
+        "schedule" : {
+          "endDate" : 9,
+          "occuranceStartTime" : "occuranceStartTime",
+          "occuranceEndTime" : "occuranceEndTime",
+          "externalId" : "externalId",
+          "active" : false,
+          "repeatedEvent" : false,
+          "updatedOn" : 5,
+          "createdOn" : 4,
+          "scheduleFor" : "CAREPLAN",
+          "archived" : false,
+          "allDayEvent" : false,
+          "attendeesList" : [ "attendeesList", "attendeesList" ],
+          "repeat" : {
+            "summary" : "summary",
+            "occuranceType" : "NO_OF_DAYS",
+            "occurances" : "occurances",
+            "type" : "DAILY",
+            "repeatOn" : {
+              "sunday" : false,
+              "saturday" : false,
+              "tuesday" : false,
+              "wednesday" : false,
+              "thursday" : false,
+              "friday" : false,
+              "monday" : false
+            },
+            "startDate" : 8,
+            "frequency" : 6
           },
-          "startDate" : 8,
-          "frequency" : 6
+          "tenantId" : "tenantId",
+          "name" : "name",
+          "id" : "id",
+          "applicationId" : "applicationId",
+          "startDate" : 9,
+          "assignerId" : "assignerId"
         },
-        "tenantId" : "tenantId",
-        "name" : "name",
-        "id" : "id",
-        "applicationId" : "applicationId",
-        "startDate" : 9,
-        "assignerId" : "assignerId"
-      },
-      "unit" : "unit",
-      "quantity" : "quantity",
-      "type" : "TABLET"
-    } ],
-    "description" : "description",
-    "source" : "CAREPLAN",
-    "createdOn" : 0,
-    "archived" : false,
-    "permissions" : "permissions",
-    "id" : "id",
-    "careplanId" : "careplanId",
+        "unit" : "unit",
+        "quantity" : "quantity",
+        "type" : "TABLET"
+      } ],
+      "description" : "description",
+      "source" : "CAREPLAN",
+      "createdOn" : 4,
+      "archived" : false,
+      "permissions" : "permissions",
+      "id" : "id",
+      "careplanId" : "careplanId",
+      "shape" : "shape",
+      "discontinuedOn" : 1,
+      "medicineId" : "medicineId",
+      "externalId" : "externalId",
+      "active" : false,
+      "updatedOn" : 7,
+      "discontinuedBy" : "discontinuedBy",
+      "userId" : "userId",
+      "prn" : false,
+      "addedOn" : 1,
+      "instruction" : "instruction",
+      "tenantId" : "tenantId",
+      "name" : "name",
+      "toBeTakenTill" : 1,
+      "applicationId" : "applicationId",
+      "interventionId" : "interventionId",
+      "assignerId" : "assignerId",
+      "status" : "ACTIVE"
+    }
+  }, {
     "assignerName" : "assignerName",
-    "shape" : "shape",
-    "discontinuedOn" : 5,
-    "medicineId" : "medicineId",
-    "externalId" : "externalId",
-    "active" : false,
-    "updatedOn" : 6,
-    "discontinuedBy" : "discontinuedBy",
-    "userId" : "userId",
-    "prn" : false,
-    "addedOn" : 1,
-    "instruction" : "instruction",
-    "tenantId" : "tenantId",
-    "name" : "name",
-    "toBeTakenTill" : 5,
-    "applicationId" : "applicationId",
-    "interventionId" : "interventionId",
-    "assignerId" : "assignerId",
-    "status" : "ACTIVE"
-  }
-} ]}]
+    "adherenceReport" : {
+      "onTrack" : false,
+      "notTakenCount" : 5,
+      "careplanEnabled" : false,
+      "percentage" : 1.4658129805029452,
+      "takenCount" : 5,
+      "careplanId" : "careplanId",
+      "userMedicineId" : "userMedicineId",
+      "message" : "message",
+      "userId" : "userId",
+      "interventionId" : "interventionId",
+      "medicineName" : "medicineName"
+    },
+    "medInfo" : {
+      "reminders" : [ {
+        "activeDays" : [ true, true ],
+        "timeOfDay" : "timeOfDay"
+      }, {
+        "activeDays" : [ true, true ],
+        "timeOfDay" : "timeOfDay"
+      } ],
+      "sourceId" : "sourceId",
+      "notes" : "notes",
+      "color" : "color",
+      "reasonToDiscontinue" : "reasonToDiscontinue",
+      "scheduled" : false,
+      "dosages" : [ {
+        "schedule" : {
+          "endDate" : 9,
+          "occuranceStartTime" : "occuranceStartTime",
+          "occuranceEndTime" : "occuranceEndTime",
+          "externalId" : "externalId",
+          "active" : false,
+          "repeatedEvent" : false,
+          "updatedOn" : 5,
+          "createdOn" : 4,
+          "scheduleFor" : "CAREPLAN",
+          "archived" : false,
+          "allDayEvent" : false,
+          "attendeesList" : [ "attendeesList", "attendeesList" ],
+          "repeat" : {
+            "summary" : "summary",
+            "occuranceType" : "NO_OF_DAYS",
+            "occurances" : "occurances",
+            "type" : "DAILY",
+            "repeatOn" : {
+              "sunday" : false,
+              "saturday" : false,
+              "tuesday" : false,
+              "wednesday" : false,
+              "thursday" : false,
+              "friday" : false,
+              "monday" : false
+            },
+            "startDate" : 8,
+            "frequency" : 6
+          },
+          "tenantId" : "tenantId",
+          "name" : "name",
+          "id" : "id",
+          "applicationId" : "applicationId",
+          "startDate" : 9,
+          "assignerId" : "assignerId"
+        },
+        "unit" : "unit",
+        "quantity" : "quantity",
+        "type" : "TABLET"
+      }, {
+        "schedule" : {
+          "endDate" : 9,
+          "occuranceStartTime" : "occuranceStartTime",
+          "occuranceEndTime" : "occuranceEndTime",
+          "externalId" : "externalId",
+          "active" : false,
+          "repeatedEvent" : false,
+          "updatedOn" : 5,
+          "createdOn" : 4,
+          "scheduleFor" : "CAREPLAN",
+          "archived" : false,
+          "allDayEvent" : false,
+          "attendeesList" : [ "attendeesList", "attendeesList" ],
+          "repeat" : {
+            "summary" : "summary",
+            "occuranceType" : "NO_OF_DAYS",
+            "occurances" : "occurances",
+            "type" : "DAILY",
+            "repeatOn" : {
+              "sunday" : false,
+              "saturday" : false,
+              "tuesday" : false,
+              "wednesday" : false,
+              "thursday" : false,
+              "friday" : false,
+              "monday" : false
+            },
+            "startDate" : 8,
+            "frequency" : 6
+          },
+          "tenantId" : "tenantId",
+          "name" : "name",
+          "id" : "id",
+          "applicationId" : "applicationId",
+          "startDate" : 9,
+          "assignerId" : "assignerId"
+        },
+        "unit" : "unit",
+        "quantity" : "quantity",
+        "type" : "TABLET"
+      } ],
+      "description" : "description",
+      "source" : "CAREPLAN",
+      "createdOn" : 4,
+      "archived" : false,
+      "permissions" : "permissions",
+      "id" : "id",
+      "careplanId" : "careplanId",
+      "shape" : "shape",
+      "discontinuedOn" : 1,
+      "medicineId" : "medicineId",
+      "externalId" : "externalId",
+      "active" : false,
+      "updatedOn" : 7,
+      "discontinuedBy" : "discontinuedBy",
+      "userId" : "userId",
+      "prn" : false,
+      "addedOn" : 1,
+      "instruction" : "instruction",
+      "tenantId" : "tenantId",
+      "name" : "name",
+      "toBeTakenTill" : 1,
+      "applicationId" : "applicationId",
+      "interventionId" : "interventionId",
+      "assignerId" : "assignerId",
+      "status" : "ACTIVE"
+    }
+  } ],
+  "offset" : 6,
+  "totalPages" : 2,
+  "totalCount" : 0
+}}]
      
      - parameter userId: (path)  
      - parameter xAuthToken: (header)  (optional)
      - parameter offset: (query)  (optional, default to 0)
-     - parameter limit: (query)  (optional, default to 0)
+     - parameter limit: (query)  (optional, default to 10)
 
-     - returns: RequestBuilder<[UserMedicinesResponse]> 
+     - returns: RequestBuilder<PagedResultUserMedicinesResponse> 
      */
-    open class func callGetWithRequestBuilder(userId: String, xAuthToken: String? = nil, offset: Int? = nil, limit: Int? = nil) -> RequestBuilder<[UserMedicinesResponse]> {
+    open class func callGetWithRequestBuilder(userId: String, xAuthToken: String? = nil, offset: Int? = nil, limit: Int? = nil) -> RequestBuilder<PagedResultUserMedicinesResponse> {
         var path = "/ehealth/v2/medicines/users/{userId}/medstats"
         let userIdPreEscape = "\(userId)"
         let userIdPostEscape = userIdPreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
@@ -474,7 +479,7 @@ open class MedicinesAPI {
         ]
         let headerParameters = APIHelper.rejectNilHeaders(nillableHeaders)
 
-        let requestBuilder: RequestBuilder<[UserMedicinesResponse]>.Type = SwaggerClientAPI.requestBuilderFactory.getBuilder()
+        let requestBuilder: RequestBuilder<PagedResultUserMedicinesResponse>.Type = SwaggerClientAPI.requestBuilderFactory.getBuilder()
 
         return requestBuilder.init(method: "GET", URLString: (url?.string ?? URLString), parameters: parameters, isBody: false, headers: headerParameters)
     }

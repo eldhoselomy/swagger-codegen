@@ -68,8 +68,21 @@ open class VisionAPI {
       "value" : "value"
     } ],
     "device" : {
-      "model" : "model",
-      "deviceCapabilities" : [ "BLOOD_PRESSURE", "BLOOD_PRESSURE" ]
+      "mobileNumber" : "mobileNumber",
+      "externalId" : "externalId",
+      "active" : false,
+      "updatedOn" : 6,
+      "type" : "type",
+      "createdOn" : 0,
+      "userId" : "userId",
+      "deviceId" : "deviceId",
+      "archived" : false,
+      "tenantId" : "tenantId",
+      "name" : "name",
+      "id" : "id",
+      "applicationId" : "applicationId",
+      "parameters" : "parameters",
+      "status" : "status"
     }
   }
 }}]

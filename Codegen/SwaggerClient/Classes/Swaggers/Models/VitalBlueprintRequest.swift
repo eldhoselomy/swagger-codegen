@@ -37,14 +37,14 @@ public struct VitalBlueprintRequest: Codable {
     public var noteEnabled: Bool?
     public var iconURL: String?
     public var contextActuations: [ContextActuationModel]?
-    public var actuationTemplate: String?
+    public var actuationTemplate: JSONValue?
     public var primary: Bool?
     public var graphRequired: Bool?
 
     public init() {
     }
 
-    public init(createdOn: Int64?, updatedOn: Int64?, tenantId: String?, applicationId: String?, archived: Bool?, externalId: String?, active: Bool?, ownerType: OwnerType?, ownerId: String?, id: String?, name: String?, type: String?, fields: [Field]?, contextFields: [FieldComponent]?, noteEnabled: Bool?, iconURL: String?, contextActuations: [ContextActuationModel]?, actuationTemplate: String?, primary: Bool?, graphRequired: Bool?) {
+    public init(createdOn: Int64?, updatedOn: Int64?, tenantId: String?, applicationId: String?, archived: Bool?, externalId: String?, active: Bool?, ownerType: OwnerType?, ownerId: String?, id: String?, name: String?, type: String?, fields: [Field]?, contextFields: [FieldComponent]?, noteEnabled: Bool?, iconURL: String?, contextActuations: [ContextActuationModel]?, actuationTemplate: JSONValue?, primary: Bool?, graphRequired: Bool?) {
         self.createdOn = createdOn
         self.updatedOn = updatedOn
         self.tenantId = tenantId

@@ -17,25 +17,102 @@ public struct CareplanAssignmentRequestDTO: Codable {
         case chronicCareManagement = "CHRONIC_CARE_MANAGEMENT"
         case _default = "DEFAULT"
     }
-    public var interventionList: [InterventionBlueprint]?
+    public enum CareplanStatus: String, Codable { 
+        case completed = "COMPLETED"
+        case suspended = "SUSPENDED"
+        case paused = "PAUSED"
+        case inProgress = "IN_PROGRESS"
+        case pendingStart = "PENDING_START"
+    }
+    public var patientId: String?
+    public var interventionList: [InterventionBluePrintRequest]?
     public var careplanName: String?
     public var careplanBlueprintId: String?
     public var careplanType: CareplanType?
-    public var patientId: String?
-    public var startDate: Date?
-    public var endDate: Date?
+    public var startTime: Int64?
+    public var endTime: Int64?
+    public var assignerId: String?
+    public var careplanStatus: CareplanStatus?
+    public var careplanBlueprint: CareplanBlueprint?
+    public var userMedicines: [UserMedicine]?
+    public var episodeId: String?
+    public var reason: String?
+    public var tenantId: String?
+    public var externalId: String?
+    public var _description: String?
+    public var assessment: Assessment?
+    public var diagnosis: Diagnosis?
+    public var history: String?
+    public var goal: String?
+    public var evaluation: String?
+    public var assessmentForm: Form?
+    public var diagnosisForm: Form?
+    public var historyForm: Form?
+    public var goalForm: Form?
+    public var evaluationForm: Form?
+    public var levelOfAssistance: String?
 
     public init() {
     }
 
-    public init(interventionList: [InterventionBlueprint], careplanName: String, careplanBlueprintId: String?, careplanType: CareplanType, patientId: String, startDate: Date, endDate: Date) {
+    public init(patientId: String, interventionList: [InterventionBluePrintRequest]?, careplanName: String, careplanBlueprintId: String?, careplanType: CareplanType, startTime: Int64, endTime: Int64, assignerId: String?, careplanStatus: CareplanStatus?, careplanBlueprint: CareplanBlueprint, userMedicines: [UserMedicine]?, episodeId: String?, reason: String?, tenantId: String, externalId: String?, _description: String?, assessment: Assessment?, diagnosis: Diagnosis?, history: String?, goal: String?, evaluation: String?, assessmentForm: Form?, diagnosisForm: Form?, historyForm: Form?, goalForm: Form?, evaluationForm: Form?, levelOfAssistance: String?) {
+        self.patientId = patientId
         self.interventionList = interventionList
         self.careplanName = careplanName
         self.careplanBlueprintId = careplanBlueprintId
         self.careplanType = careplanType
-        self.patientId = patientId
-        self.startDate = startDate
-        self.endDate = endDate
+        self.startTime = startTime
+        self.endTime = endTime
+        self.assignerId = assignerId
+        self.careplanStatus = careplanStatus
+        self.careplanBlueprint = careplanBlueprint
+        self.userMedicines = userMedicines
+        self.episodeId = episodeId
+        self.reason = reason
+        self.tenantId = tenantId
+        self.externalId = externalId
+        self._description = _description
+        self.assessment = assessment
+        self.diagnosis = diagnosis
+        self.history = history
+        self.goal = goal
+        self.evaluation = evaluation
+        self.assessmentForm = assessmentForm
+        self.diagnosisForm = diagnosisForm
+        self.historyForm = historyForm
+        self.goalForm = goalForm
+        self.evaluationForm = evaluationForm
+        self.levelOfAssistance = levelOfAssistance
+    }
+
+    public enum CodingKeys: String, CodingKey { 
+        case patientId
+        case interventionList
+        case careplanName
+        case careplanBlueprintId
+        case careplanType
+        case startTime
+        case endTime
+        case assignerId
+        case careplanStatus
+        case careplanBlueprint
+        case userMedicines
+        case episodeId
+        case reason
+        case tenantId
+        case externalId
+        case _description = "description"
+        case assessment
+        case diagnosis
+        case history
+        case goal
+        case evaluation
+        case assessmentForm
+        case diagnosisForm
+        case historyForm
+        case goalForm
+        case evaluationForm
+        case levelOfAssistance
     }
 
 

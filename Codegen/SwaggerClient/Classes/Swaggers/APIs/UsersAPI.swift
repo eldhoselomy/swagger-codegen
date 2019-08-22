@@ -62,6 +62,44 @@ open class UsersAPI {
     }
 
     /**
+
+     - parameter guardianId: (path)  
+     - parameter completion: completion handler to receive the data and the error objects
+     */
+    open class func archiveGuardian(guardianId: String, completion: @escaping ((_ data: Void?,_ error: Error?) -> Void)) {
+        archiveGuardianWithRequestBuilder(guardianId: guardianId).execute { (response, error) -> Void in
+            if error == nil {
+                completion((), error)
+            } else {
+                completion(nil, error)
+            }
+        }
+    }
+
+
+    /**
+     - DELETE /ehealth/v2/users/guardians/{guardianId}
+     
+     - parameter guardianId: (path)  
+
+     - returns: RequestBuilder<Void> 
+     */
+    open class func archiveGuardianWithRequestBuilder(guardianId: String) -> RequestBuilder<Void> {
+        var path = "/ehealth/v2/users/guardians/{guardianId}"
+        let guardianIdPreEscape = "\(guardianId)"
+        let guardianIdPostEscape = guardianIdPreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
+        path = path.replacingOccurrences(of: "{guardianId}", with: guardianIdPostEscape, options: .literal, range: nil)
+        let URLString = SwaggerClientAPI.basePath + path
+        let parameters: [String:Any]? = nil
+        
+        let url = URLComponents(string: URLString)
+
+        let requestBuilder: RequestBuilder<Void>.Type = SwaggerClientAPI.requestBuilderFactory.getNonDecodableBuilder()
+
+        return requestBuilder.init(method: "DELETE", URLString: (url?.string ?? URLString), parameters: parameters, isBody: false)
+    }
+
+    /**
      * enum for parameter ownerType
      */
     public enum OwnerType_assignDynamicForm: String { 
@@ -363,6 +401,7 @@ open class UsersAPI {
   },
   "mobile" : "mobile",
   "externalId" : "externalId",
+  "fullName" : "fullName",
   "dateOfBirth" : 1,
   "room" : "room",
   "careplanEnabled" : false,
@@ -515,6 +554,7 @@ open class UsersAPI {
   },
   "mobile" : "mobile",
   "externalId" : "externalId",
+  "fullName" : "fullName",
   "dateOfBirth" : 1,
   "room" : "room",
   "careplanEnabled" : false,
@@ -715,6 +755,7 @@ open class UsersAPI {
   },
   "mobile" : "mobile",
   "externalId" : "externalId",
+  "fullName" : "fullName",
   "dateOfBirth" : 1,
   "room" : "room",
   "additionalInfoList" : [ {
@@ -949,6 +990,7 @@ open class UsersAPI {
   },
   "mobile" : "mobile",
   "externalId" : "externalId",
+  "fullName" : "fullName",
   "dateOfBirth" : 1,
   "room" : "room",
   "additionalInfoList" : [ {
@@ -1865,7 +1907,7 @@ open class UsersAPI {
      - parameter xAuthToken: (header)  (optional)
      - parameter completion: completion handler to receive the data and the error objects
      */
-    open class func getActiveUserList(caretakerId: String, xAuthToken: String? = nil, completion: @escaping ((_ data: [[String]]?,_ error: Error?) -> Void)) {
+    open class func getActiveUserList(caretakerId: String, xAuthToken: String? = nil, completion: @escaping ((_ data: [[JSONValue]]?,_ error: Error?) -> Void)) {
         getActiveUserListWithRequestBuilder(caretakerId: caretakerId, xAuthToken: xAuthToken).execute { (response, error) -> Void in
             completion(response?.body, error)
         }
@@ -1879,9 +1921,9 @@ open class UsersAPI {
      - parameter caretakerId: (path)  
      - parameter xAuthToken: (header)  (optional)
 
-     - returns: RequestBuilder<[[String]]> 
+     - returns: RequestBuilder<[[JSONValue]]> 
      */
-    open class func getActiveUserListWithRequestBuilder(caretakerId: String, xAuthToken: String? = nil) -> RequestBuilder<[[String]]> {
+    open class func getActiveUserListWithRequestBuilder(caretakerId: String, xAuthToken: String? = nil) -> RequestBuilder<[[JSONValue]]> {
         var path = "/ehealth/v2/users/active/{caretakerId}"
         let caretakerIdPreEscape = "\(caretakerId)"
         let caretakerIdPostEscape = caretakerIdPreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
@@ -1895,7 +1937,7 @@ open class UsersAPI {
         ]
         let headerParameters = APIHelper.rejectNilHeaders(nillableHeaders)
 
-        let requestBuilder: RequestBuilder<[[String]]>.Type = SwaggerClientAPI.requestBuilderFactory.getBuilder()
+        let requestBuilder: RequestBuilder<[[JSONValue]]>.Type = SwaggerClientAPI.requestBuilderFactory.getBuilder()
 
         return requestBuilder.init(method: "GET", URLString: (url?.string ?? URLString), parameters: parameters, isBody: false, headers: headerParameters)
     }
@@ -2128,6 +2170,7 @@ open class UsersAPI {
   },
   "mobile" : "mobile",
   "externalId" : "externalId",
+  "fullName" : "fullName",
   "dateOfBirth" : 1,
   "room" : "room",
   "additionalInfoList" : [ {
@@ -2278,6 +2321,7 @@ open class UsersAPI {
   },
   "mobile" : "mobile",
   "externalId" : "externalId",
+  "fullName" : "fullName",
   "dateOfBirth" : 1,
   "room" : "room",
   "additionalInfoList" : [ {
@@ -2469,6 +2513,7 @@ open class UsersAPI {
   },
   "mobile" : "mobile",
   "externalId" : "externalId",
+  "fullName" : "fullName",
   "dateOfBirth" : 1,
   "room" : "room",
   "additionalInfoList" : [ {
@@ -2619,6 +2664,7 @@ open class UsersAPI {
   },
   "mobile" : "mobile",
   "externalId" : "externalId",
+  "fullName" : "fullName",
   "dateOfBirth" : 1,
   "room" : "room",
   "additionalInfoList" : [ {
@@ -2890,6 +2936,7 @@ open class UsersAPI {
   },
   "mobile" : "mobile",
   "externalId" : "externalId",
+  "fullName" : "fullName",
   "dateOfBirth" : 1,
   "room" : "room",
   "additionalInfoList" : [ {
@@ -3042,6 +3089,7 @@ open class UsersAPI {
   },
   "mobile" : "mobile",
   "externalId" : "externalId",
+  "fullName" : "fullName",
   "dateOfBirth" : 1,
   "room" : "room",
   "additionalInfoList" : [ {
@@ -3241,6 +3289,7 @@ open class UsersAPI {
   },
   "mobile" : "mobile",
   "externalId" : "externalId",
+  "fullName" : "fullName",
   "dateOfBirth" : 1,
   "room" : "room",
   "additionalInfoList" : [ {
@@ -3393,6 +3442,7 @@ open class UsersAPI {
   },
   "mobile" : "mobile",
   "externalId" : "externalId",
+  "fullName" : "fullName",
   "dateOfBirth" : 1,
   "room" : "room",
   "additionalInfoList" : [ {
@@ -3751,6 +3801,7 @@ open class UsersAPI {
   },
   "mobile" : "mobile",
   "externalId" : "externalId",
+  "fullName" : "fullName",
   "dateOfBirth" : 1,
   "room" : "room",
   "additionalInfoList" : [ {
@@ -3901,6 +3952,7 @@ open class UsersAPI {
   },
   "mobile" : "mobile",
   "externalId" : "externalId",
+  "fullName" : "fullName",
   "dateOfBirth" : 1,
   "room" : "room",
   "additionalInfoList" : [ {
@@ -4193,7 +4245,8 @@ open class UsersAPI {
       "evaluation" : "evaluation",
       "archived" : false,
       "assessment" : {
-        "signature" : "signature"
+        "subjective" : "subjective",
+        "objective" : "objective"
       },
       "numOfDays" : 6,
       "careplanBluprintId" : "careplanBluprintId",
@@ -4776,14 +4829,14 @@ open class UsersAPI {
     "deviceType" : "deviceType",
     "externalId" : "externalId",
     "active" : false,
-    "takenOn" : 1,
+    "takenOn" : 5,
     "postAction" : "postAction",
     "noteId" : "noteId",
     "contextId" : "contextId",
-    "updatedOn" : 7,
+    "updatedOn" : 5,
     "source" : "MANUAL",
     "deviceReading" : false,
-    "createdOn" : 4,
+    "createdOn" : 1,
     "userId" : "userId",
     "deviceId" : "deviceId",
     "platform" : "platform",
@@ -4800,14 +4853,14 @@ open class UsersAPI {
     "deviceType" : "deviceType",
     "externalId" : "externalId",
     "active" : false,
-    "takenOn" : 1,
+    "takenOn" : 5,
     "postAction" : "postAction",
     "noteId" : "noteId",
     "contextId" : "contextId",
-    "updatedOn" : 7,
+    "updatedOn" : 5,
     "source" : "MANUAL",
     "deviceReading" : false,
-    "createdOn" : 4,
+    "createdOn" : 1,
     "userId" : "userId",
     "deviceId" : "deviceId",
     "platform" : "platform",
@@ -5183,6 +5236,7 @@ open class UsersAPI {
     },
     "mobile" : "mobile",
     "externalId" : "externalId",
+    "fullName" : "fullName",
     "dateOfBirth" : 1,
     "room" : "room",
     "additionalInfoList" : [ {
@@ -5486,6 +5540,7 @@ open class UsersAPI {
   },
   "mobile" : "mobile",
   "externalId" : "externalId",
+  "fullName" : "fullName",
   "dateOfBirth" : 1,
   "room" : "room",
   "additionalInfoList" : [ {
@@ -5636,6 +5691,7 @@ open class UsersAPI {
   },
   "mobile" : "mobile",
   "externalId" : "externalId",
+  "fullName" : "fullName",
   "dateOfBirth" : 1,
   "room" : "room",
   "additionalInfoList" : [ {
@@ -6432,6 +6488,7 @@ open class UsersAPI {
   },
   "mobile" : "mobile",
   "externalId" : "externalId",
+  "fullName" : "fullName",
   "dateOfBirth" : 1,
   "room" : "room",
   "additionalInfoList" : [ {
@@ -6985,6 +7042,7 @@ open class UsersAPI {
   },
   "mobile" : "mobile",
   "externalId" : "externalId",
+  "fullName" : "fullName",
   "dateOfBirth" : 1,
   "room" : "room",
   "additionalInfoList" : [ {
@@ -7135,6 +7193,7 @@ open class UsersAPI {
   },
   "mobile" : "mobile",
   "externalId" : "externalId",
+  "fullName" : "fullName",
   "dateOfBirth" : 1,
   "room" : "room",
   "additionalInfoList" : [ {
@@ -7327,6 +7386,7 @@ open class UsersAPI {
   },
   "mobile" : "mobile",
   "externalId" : "externalId",
+  "fullName" : "fullName",
   "dateOfBirth" : 1,
   "room" : "room",
   "additionalInfoList" : [ {
@@ -7615,6 +7675,7 @@ open class UsersAPI {
   },
   "mobile" : "mobile",
   "externalId" : "externalId",
+  "fullName" : "fullName",
   "dateOfBirth" : 1,
   "room" : "room",
   "additionalInfoList" : [ {
@@ -7765,6 +7826,7 @@ open class UsersAPI {
   },
   "mobile" : "mobile",
   "externalId" : "externalId",
+  "fullName" : "fullName",
   "dateOfBirth" : 1,
   "room" : "room",
   "additionalInfoList" : [ {
@@ -7968,6 +8030,7 @@ open class UsersAPI {
   },
   "mobile" : "mobile",
   "externalId" : "externalId",
+  "fullName" : "fullName",
   "dateOfBirth" : 1,
   "room" : "room",
   "additionalInfoList" : [ {
@@ -8257,6 +8320,7 @@ open class UsersAPI {
   },
   "mobile" : "mobile",
   "externalId" : "externalId",
+  "fullName" : "fullName",
   "dateOfBirth" : 1,
   "room" : "room",
   "additionalInfoList" : [ {
@@ -9038,6 +9102,185 @@ open class UsersAPI {
         let url = URLComponents(string: URLString)
 
         let requestBuilder: RequestBuilder<Void>.Type = SwaggerClientAPI.requestBuilderFactory.getNonDecodableBuilder()
+
+        return requestBuilder.init(method: "GET", URLString: (url?.string ?? URLString), parameters: parameters, isBody: false)
+    }
+
+    /**
+
+     - parameter guardianId: (path)  
+     - parameter completion: completion handler to receive the data and the error objects
+     */
+    open class func usersByGuardianId(guardianId: String, completion: @escaping ((_ data: [UserGuardianRelationResponseDTO]?,_ error: Error?) -> Void)) {
+        usersByGuardianIdWithRequestBuilder(guardianId: guardianId).execute { (response, error) -> Void in
+            completion(response?.body, error)
+        }
+    }
+
+
+    /**
+     - GET /ehealth/v2/users/guardians/{guardianId}/patients
+     - examples: [{contentType=application/json, example=[ {
+  "userResponseDTO" : {
+    "lastName" : "lastName",
+    "country" : "country",
+    "zipCode" : "zipCode",
+    "occupation" : "occupation",
+    "education" : "education",
+    "gender" : "gender",
+    "groupId" : "groupId",
+    "type" : "type",
+    "shiftTimings" : "shiftTimings",
+    "createdOn" : 7,
+    "authId" : "authId",
+    "encryptedPassword" : "encryptedPassword",
+    "archived" : false,
+    "bloodGroup" : "bloodGroup",
+    "countryCode" : "countryCode",
+    "currency" : "currency",
+    "id" : "id",
+    "profilePhotoId" : "profilePhotoId",
+    "hourlyPrice" : 4.145608,
+    "email" : "email",
+    "height" : {
+      "unit" : "unit",
+      "value" : 2.027123
+    },
+    "shiftId" : "shiftId",
+    "address" : {
+      "zipCode" : "zipCode",
+      "country" : "country",
+      "lng" : "lng",
+      "pin" : "pin",
+      "city" : "city",
+      "location" : "location",
+      "state" : "state",
+      "line2" : "line2",
+      "line1" : "line1",
+      "lat" : "lat"
+    },
+    "maratialstatus" : "maratialstatus",
+    "emergencyContact" : "emergencyContact",
+    "mobile" : "mobile",
+    "externalId" : "externalId",
+    "active" : false,
+    "weight" : {
+      "unit" : "unit",
+      "value" : 3.6160767
+    },
+    "timeZone" : "timeZone",
+    "dateOfBirth" : 3,
+    "passwordResetEnabled" : false,
+    "updatedOn" : 9,
+    "profilePhotoURL" : "profilePhotoURL",
+    "firstName" : "firstName",
+    "profileTags" : [ "profileTags", "profileTags" ],
+    "hipSize" : {
+      "unit" : "unit",
+      "value" : 4.145608
+    },
+    "waistSize" : {
+      "unit" : "unit",
+      "value" : 7.386282
+    },
+    "tenantId" : "tenantId",
+    "pulse" : "pulse",
+    "applicationId" : "applicationId",
+    "category" : "category",
+    "parameters" : "parameters",
+    "age" : 2,
+    "username" : "username"
+  },
+  "relation" : "relation"
+}, {
+  "userResponseDTO" : {
+    "lastName" : "lastName",
+    "country" : "country",
+    "zipCode" : "zipCode",
+    "occupation" : "occupation",
+    "education" : "education",
+    "gender" : "gender",
+    "groupId" : "groupId",
+    "type" : "type",
+    "shiftTimings" : "shiftTimings",
+    "createdOn" : 7,
+    "authId" : "authId",
+    "encryptedPassword" : "encryptedPassword",
+    "archived" : false,
+    "bloodGroup" : "bloodGroup",
+    "countryCode" : "countryCode",
+    "currency" : "currency",
+    "id" : "id",
+    "profilePhotoId" : "profilePhotoId",
+    "hourlyPrice" : 4.145608,
+    "email" : "email",
+    "height" : {
+      "unit" : "unit",
+      "value" : 2.027123
+    },
+    "shiftId" : "shiftId",
+    "address" : {
+      "zipCode" : "zipCode",
+      "country" : "country",
+      "lng" : "lng",
+      "pin" : "pin",
+      "city" : "city",
+      "location" : "location",
+      "state" : "state",
+      "line2" : "line2",
+      "line1" : "line1",
+      "lat" : "lat"
+    },
+    "maratialstatus" : "maratialstatus",
+    "emergencyContact" : "emergencyContact",
+    "mobile" : "mobile",
+    "externalId" : "externalId",
+    "active" : false,
+    "weight" : {
+      "unit" : "unit",
+      "value" : 3.6160767
+    },
+    "timeZone" : "timeZone",
+    "dateOfBirth" : 3,
+    "passwordResetEnabled" : false,
+    "updatedOn" : 9,
+    "profilePhotoURL" : "profilePhotoURL",
+    "firstName" : "firstName",
+    "profileTags" : [ "profileTags", "profileTags" ],
+    "hipSize" : {
+      "unit" : "unit",
+      "value" : 4.145608
+    },
+    "waistSize" : {
+      "unit" : "unit",
+      "value" : 7.386282
+    },
+    "tenantId" : "tenantId",
+    "pulse" : "pulse",
+    "applicationId" : "applicationId",
+    "category" : "category",
+    "parameters" : "parameters",
+    "age" : 2,
+    "username" : "username"
+  },
+  "relation" : "relation"
+} ]}]
+     
+     - parameter guardianId: (path)  
+
+     - returns: RequestBuilder<[UserGuardianRelationResponseDTO]> 
+     */
+    open class func usersByGuardianIdWithRequestBuilder(guardianId: String) -> RequestBuilder<[UserGuardianRelationResponseDTO]> {
+        var path = "/ehealth/v2/users/guardians/{guardianId}/patients"
+        let guardianIdPreEscape = "\(guardianId)"
+        let guardianIdPostEscape = guardianIdPreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
+        path = path.replacingOccurrences(of: "{guardianId}", with: guardianIdPostEscape, options: .literal, range: nil)
+        let URLString = SwaggerClientAPI.basePath + path
+        let parameters: [String:Any]? = nil
+        
+        let url = URLComponents(string: URLString)
+
+        let requestBuilder: RequestBuilder<[UserGuardianRelationResponseDTO]>.Type = SwaggerClientAPI.requestBuilderFactory.getBuilder()
 
         return requestBuilder.init(method: "GET", URLString: (url?.string ?? URLString), parameters: parameters, isBody: false)
     }

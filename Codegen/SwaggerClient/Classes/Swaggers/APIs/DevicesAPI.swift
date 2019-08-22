@@ -151,8 +151,21 @@ open class DevicesAPI {
     /**
      - GET /ehealth/v2/users/devices/{deviceId}
      - examples: [{contentType=application/json, example={
-  "model" : "model",
-  "deviceCapabilities" : [ "BLOOD_PRESSURE", "BLOOD_PRESSURE" ]
+  "mobileNumber" : "mobileNumber",
+  "externalId" : "externalId",
+  "active" : false,
+  "updatedOn" : 6,
+  "type" : "type",
+  "createdOn" : 0,
+  "userId" : "userId",
+  "deviceId" : "deviceId",
+  "archived" : false,
+  "tenantId" : "tenantId",
+  "name" : "name",
+  "id" : "id",
+  "applicationId" : "applicationId",
+  "parameters" : "parameters",
+  "status" : "status"
 }}]
      
      - parameter deviceId: (path)  
@@ -195,8 +208,21 @@ open class DevicesAPI {
     /**
      - GET /ehealth/v2/users/devices/user/{patientId}
      - examples: [{contentType=application/json, example={
-  "model" : "model",
-  "deviceCapabilities" : [ "BLOOD_PRESSURE", "BLOOD_PRESSURE" ]
+  "mobileNumber" : "mobileNumber",
+  "externalId" : "externalId",
+  "active" : false,
+  "updatedOn" : 6,
+  "type" : "type",
+  "createdOn" : 0,
+  "userId" : "userId",
+  "deviceId" : "deviceId",
+  "archived" : false,
+  "tenantId" : "tenantId",
+  "name" : "name",
+  "id" : "id",
+  "applicationId" : "applicationId",
+  "parameters" : "parameters",
+  "status" : "status"
 }}]
      
      - parameter patientId: (path)  
@@ -378,8 +404,21 @@ open class DevicesAPI {
     /**
      - GET /ehealth/v2/users/devices/unique/{deviceId}/{mobileNumber}
      - examples: [{contentType=application/json, example={
-  "model" : "model",
-  "deviceCapabilities" : [ "BLOOD_PRESSURE", "BLOOD_PRESSURE" ]
+  "mobileNumber" : "mobileNumber",
+  "externalId" : "externalId",
+  "active" : false,
+  "updatedOn" : 6,
+  "type" : "type",
+  "createdOn" : 0,
+  "userId" : "userId",
+  "deviceId" : "deviceId",
+  "archived" : false,
+  "tenantId" : "tenantId",
+  "name" : "name",
+  "id" : "id",
+  "applicationId" : "applicationId",
+  "parameters" : "parameters",
+  "status" : "status"
 }}]
      
      - parameter deviceId: (path)  
@@ -426,8 +465,21 @@ open class DevicesAPI {
     /**
      - POST /ehealth/v2/users/devices
      - examples: [{contentType=application/json, example={
-  "model" : "model",
-  "deviceCapabilities" : [ "BLOOD_PRESSURE", "BLOOD_PRESSURE" ]
+  "mobileNumber" : "mobileNumber",
+  "externalId" : "externalId",
+  "active" : false,
+  "updatedOn" : 6,
+  "type" : "type",
+  "createdOn" : 0,
+  "userId" : "userId",
+  "deviceId" : "deviceId",
+  "archived" : false,
+  "tenantId" : "tenantId",
+  "name" : "name",
+  "id" : "id",
+  "applicationId" : "applicationId",
+  "parameters" : "parameters",
+  "status" : "status"
 }}]
      
      - parameter xAuthToken: (header)  (optional)
@@ -517,8 +569,21 @@ open class DevicesAPI {
     /**
      - PUT /ehealth/v2/users/devices
      - examples: [{contentType=application/json, example={
-  "model" : "model",
-  "deviceCapabilities" : [ "BLOOD_PRESSURE", "BLOOD_PRESSURE" ]
+  "mobileNumber" : "mobileNumber",
+  "externalId" : "externalId",
+  "active" : false,
+  "updatedOn" : 6,
+  "type" : "type",
+  "createdOn" : 0,
+  "userId" : "userId",
+  "deviceId" : "deviceId",
+  "archived" : false,
+  "tenantId" : "tenantId",
+  "name" : "name",
+  "id" : "id",
+  "applicationId" : "applicationId",
+  "parameters" : "parameters",
+  "status" : "status"
 }}]
      
      - parameter xAuthToken: (header)  (optional)

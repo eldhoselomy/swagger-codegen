@@ -15,14 +15,16 @@ public struct ActionGroupsResponse: Codable {
     public var totalCount: Int64?
     public var offset: Int64?
     public var result: [ActionGroup]?
+    public var totalPages: Int64?
 
     public init() {
     }
 
-    public init(totalCount: Int64?, offset: Int64?, result: [ActionGroup]?) {
+    public init(totalCount: Int64?, offset: Int64?, result: [ActionGroup]?, totalPages: Int64?) {
         self.totalCount = totalCount
         self.offset = offset
         self.result = result
+        self.totalPages = totalPages
     }
 
 

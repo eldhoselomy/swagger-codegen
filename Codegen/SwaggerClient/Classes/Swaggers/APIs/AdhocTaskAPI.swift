@@ -35,7 +35,8 @@ open class AdhocTaskAPI {
   "evaluation" : "evaluation",
   "archived" : false,
   "assessment" : {
-    "signature" : "signature"
+    "subjective" : "subjective",
+    "objective" : "objective"
   },
   "id" : "id",
   "beginTime" : 5,
@@ -257,7 +258,8 @@ open class AdhocTaskAPI {
   "evaluation" : "evaluation",
   "archived" : false,
   "assessment" : {
-    "signature" : "signature"
+    "subjective" : "subjective",
+    "objective" : "objective"
   },
   "id" : "id",
   "beginTime" : 5,

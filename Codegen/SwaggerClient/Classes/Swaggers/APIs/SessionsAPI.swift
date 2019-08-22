@@ -28,6 +28,7 @@ open class SessionsAPI {
      - GET /ehealth/v2/sessions
      - examples: [{contentType=application/json, example={
   "archived" : false,
+  "shouldChangePassword" : false,
   "accountType" : "PATIENT",
   "tenantId" : "tenantId",
   "externalId" : "externalId",
@@ -75,6 +76,7 @@ open class SessionsAPI {
      - POST /ehealth/v2/sessions
      - examples: [{contentType=application/json, example={
   "archived" : false,
+  "shouldChangePassword" : false,
   "accountType" : "PATIENT",
   "tenantId" : "tenantId",
   "externalId" : "externalId",
@@ -118,6 +120,7 @@ open class SessionsAPI {
      - POST /ehealth/v2/sessions/{externalId}
      - examples: [{contentType=application/json, example={
   "archived" : false,
+  "shouldChangePassword" : false,
   "accountType" : "PATIENT",
   "tenantId" : "tenantId",
   "externalId" : "externalId",
@@ -164,6 +167,7 @@ open class SessionsAPI {
      - PUT /ehealth/v2/sessions
      - examples: [{contentType=application/json, example={
   "archived" : false,
+  "shouldChangePassword" : false,
   "accountType" : "PATIENT",
   "tenantId" : "tenantId",
   "externalId" : "externalId",

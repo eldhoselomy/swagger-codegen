@@ -240,7 +240,8 @@ open class StatsAPI {
       "evaluation" : "evaluation",
       "archived" : false,
       "assessment" : {
-        "signature" : "signature"
+        "subjective" : "subjective",
+        "objective" : "objective"
       },
       "numOfDays" : 6,
       "careplanBluprintId" : "careplanBluprintId",
@@ -1012,7 +1013,8 @@ open class StatsAPI {
       "evaluation" : "evaluation",
       "archived" : false,
       "assessment" : {
-        "signature" : "signature"
+        "subjective" : "subjective",
+        "objective" : "objective"
       },
       "numOfDays" : 6,
       "careplanBluprintId" : "careplanBluprintId",
@@ -1689,6 +1691,7 @@ open class StatsAPI {
       },
       "mobile" : "mobile",
       "externalId" : "externalId",
+      "fullName" : "fullName",
       "dateOfBirth" : 1,
       "room" : "room",
       "additionalInfoList" : [ {
@@ -1839,6 +1842,7 @@ open class StatsAPI {
       },
       "mobile" : "mobile",
       "externalId" : "externalId",
+      "fullName" : "fullName",
       "dateOfBirth" : 1,
       "room" : "room",
       "additionalInfoList" : [ {
@@ -1886,9 +1890,11 @@ open class StatsAPI {
       "closedBy" : "closedBy",
       "notes" : "notes",
       "patientId" : "patientId",
+      "entityType" : "entityType",
       "closedOn" : 1,
       "externalId" : "externalId",
       "active" : false,
+      "entityId" : "entityId",
       "updatedOn" : 6,
       "message" : "message",
       "type" : "type",
@@ -1906,9 +1912,11 @@ open class StatsAPI {
       "closedBy" : "closedBy",
       "notes" : "notes",
       "patientId" : "patientId",
+      "entityType" : "entityType",
       "closedOn" : 1,
       "externalId" : "externalId",
       "active" : false,
+      "entityId" : "entityId",
       "updatedOn" : 6,
       "message" : "message",
       "type" : "type",
@@ -2192,7 +2200,8 @@ open class StatsAPI {
       "evaluation" : "evaluation",
       "archived" : false,
       "assessment" : {
-        "signature" : "signature"
+        "subjective" : "subjective",
+        "objective" : "objective"
       },
       "numOfDays" : 6,
       "careplanBluprintId" : "careplanBluprintId",
@@ -2964,7 +2973,8 @@ open class StatsAPI {
       "evaluation" : "evaluation",
       "archived" : false,
       "assessment" : {
-        "signature" : "signature"
+        "subjective" : "subjective",
+        "objective" : "objective"
       },
       "numOfDays" : 6,
       "careplanBluprintId" : "careplanBluprintId",
@@ -3641,6 +3651,7 @@ open class StatsAPI {
       },
       "mobile" : "mobile",
       "externalId" : "externalId",
+      "fullName" : "fullName",
       "dateOfBirth" : 1,
       "room" : "room",
       "additionalInfoList" : [ {
@@ -3791,6 +3802,7 @@ open class StatsAPI {
       },
       "mobile" : "mobile",
       "externalId" : "externalId",
+      "fullName" : "fullName",
       "dateOfBirth" : 1,
       "room" : "room",
       "additionalInfoList" : [ {
@@ -3838,9 +3850,11 @@ open class StatsAPI {
       "closedBy" : "closedBy",
       "notes" : "notes",
       "patientId" : "patientId",
+      "entityType" : "entityType",
       "closedOn" : 1,
       "externalId" : "externalId",
       "active" : false,
+      "entityId" : "entityId",
       "updatedOn" : 6,
       "message" : "message",
       "type" : "type",
@@ -3858,9 +3872,11 @@ open class StatsAPI {
       "closedBy" : "closedBy",
       "notes" : "notes",
       "patientId" : "patientId",
+      "entityType" : "entityType",
       "closedOn" : 1,
       "externalId" : "externalId",
       "active" : false,
+      "entityId" : "entityId",
       "updatedOn" : 6,
       "message" : "message",
       "type" : "type",
@@ -4145,7 +4161,8 @@ open class StatsAPI {
       "evaluation" : "evaluation",
       "archived" : false,
       "assessment" : {
-        "signature" : "signature"
+        "subjective" : "subjective",
+        "objective" : "objective"
       },
       "numOfDays" : 6,
       "careplanBluprintId" : "careplanBluprintId",
@@ -4917,7 +4934,8 @@ open class StatsAPI {
       "evaluation" : "evaluation",
       "archived" : false,
       "assessment" : {
-        "signature" : "signature"
+        "subjective" : "subjective",
+        "objective" : "objective"
       },
       "numOfDays" : 6,
       "careplanBluprintId" : "careplanBluprintId",
@@ -5594,6 +5612,7 @@ open class StatsAPI {
       },
       "mobile" : "mobile",
       "externalId" : "externalId",
+      "fullName" : "fullName",
       "dateOfBirth" : 1,
       "room" : "room",
       "additionalInfoList" : [ {
@@ -5744,6 +5763,7 @@ open class StatsAPI {
       },
       "mobile" : "mobile",
       "externalId" : "externalId",
+      "fullName" : "fullName",
       "dateOfBirth" : 1,
       "room" : "room",
       "additionalInfoList" : [ {
@@ -5791,9 +5811,11 @@ open class StatsAPI {
       "closedBy" : "closedBy",
       "notes" : "notes",
       "patientId" : "patientId",
+      "entityType" : "entityType",
       "closedOn" : 1,
       "externalId" : "externalId",
       "active" : false,
+      "entityId" : "entityId",
       "updatedOn" : 6,
       "message" : "message",
       "type" : "type",
@@ -5811,9 +5833,11 @@ open class StatsAPI {
       "closedBy" : "closedBy",
       "notes" : "notes",
       "patientId" : "patientId",
+      "entityType" : "entityType",
       "closedOn" : 1,
       "externalId" : "externalId",
       "active" : false,
+      "entityId" : "entityId",
       "updatedOn" : 6,
       "message" : "message",
       "type" : "type",
@@ -6095,7 +6119,8 @@ open class StatsAPI {
       "evaluation" : "evaluation",
       "archived" : false,
       "assessment" : {
-        "signature" : "signature"
+        "subjective" : "subjective",
+        "objective" : "objective"
       },
       "numOfDays" : 6,
       "careplanBluprintId" : "careplanBluprintId",
@@ -6867,7 +6892,8 @@ open class StatsAPI {
       "evaluation" : "evaluation",
       "archived" : false,
       "assessment" : {
-        "signature" : "signature"
+        "subjective" : "subjective",
+        "objective" : "objective"
       },
       "numOfDays" : 6,
       "careplanBluprintId" : "careplanBluprintId",
@@ -7544,6 +7570,7 @@ open class StatsAPI {
       },
       "mobile" : "mobile",
       "externalId" : "externalId",
+      "fullName" : "fullName",
       "dateOfBirth" : 1,
       "room" : "room",
       "additionalInfoList" : [ {
@@ -7694,6 +7721,7 @@ open class StatsAPI {
       },
       "mobile" : "mobile",
       "externalId" : "externalId",
+      "fullName" : "fullName",
       "dateOfBirth" : 1,
       "room" : "room",
       "additionalInfoList" : [ {
@@ -7741,9 +7769,11 @@ open class StatsAPI {
       "closedBy" : "closedBy",
       "notes" : "notes",
       "patientId" : "patientId",
+      "entityType" : "entityType",
       "closedOn" : 1,
       "externalId" : "externalId",
       "active" : false,
+      "entityId" : "entityId",
       "updatedOn" : 6,
       "message" : "message",
       "type" : "type",
@@ -7761,9 +7791,11 @@ open class StatsAPI {
       "closedBy" : "closedBy",
       "notes" : "notes",
       "patientId" : "patientId",
+      "entityType" : "entityType",
       "closedOn" : 1,
       "externalId" : "externalId",
       "active" : false,
+      "entityId" : "entityId",
       "updatedOn" : 6,
       "message" : "message",
       "type" : "type",
@@ -8044,7 +8076,8 @@ open class StatsAPI {
       "evaluation" : "evaluation",
       "archived" : false,
       "assessment" : {
-        "signature" : "signature"
+        "subjective" : "subjective",
+        "objective" : "objective"
       },
       "numOfDays" : 6,
       "careplanBluprintId" : "careplanBluprintId",
@@ -8816,7 +8849,8 @@ open class StatsAPI {
       "evaluation" : "evaluation",
       "archived" : false,
       "assessment" : {
-        "signature" : "signature"
+        "subjective" : "subjective",
+        "objective" : "objective"
       },
       "numOfDays" : 6,
       "careplanBluprintId" : "careplanBluprintId",
@@ -9493,6 +9527,7 @@ open class StatsAPI {
       },
       "mobile" : "mobile",
       "externalId" : "externalId",
+      "fullName" : "fullName",
       "dateOfBirth" : 1,
       "room" : "room",
       "additionalInfoList" : [ {
@@ -9643,6 +9678,7 @@ open class StatsAPI {
       },
       "mobile" : "mobile",
       "externalId" : "externalId",
+      "fullName" : "fullName",
       "dateOfBirth" : 1,
       "room" : "room",
       "additionalInfoList" : [ {
@@ -9690,9 +9726,11 @@ open class StatsAPI {
       "closedBy" : "closedBy",
       "notes" : "notes",
       "patientId" : "patientId",
+      "entityType" : "entityType",
       "closedOn" : 1,
       "externalId" : "externalId",
       "active" : false,
+      "entityId" : "entityId",
       "updatedOn" : 6,
       "message" : "message",
       "type" : "type",
@@ -9710,9 +9748,11 @@ open class StatsAPI {
       "closedBy" : "closedBy",
       "notes" : "notes",
       "patientId" : "patientId",
+      "entityType" : "entityType",
       "closedOn" : 1,
       "externalId" : "externalId",
       "active" : false,
+      "entityId" : "entityId",
       "updatedOn" : 6,
       "message" : "message",
       "type" : "type",
@@ -9995,7 +10035,8 @@ open class StatsAPI {
       "evaluation" : "evaluation",
       "archived" : false,
       "assessment" : {
-        "signature" : "signature"
+        "subjective" : "subjective",
+        "objective" : "objective"
       },
       "numOfDays" : 6,
       "careplanBluprintId" : "careplanBluprintId",
@@ -10767,7 +10808,8 @@ open class StatsAPI {
       "evaluation" : "evaluation",
       "archived" : false,
       "assessment" : {
-        "signature" : "signature"
+        "subjective" : "subjective",
+        "objective" : "objective"
       },
       "numOfDays" : 6,
       "careplanBluprintId" : "careplanBluprintId",
@@ -11444,6 +11486,7 @@ open class StatsAPI {
       },
       "mobile" : "mobile",
       "externalId" : "externalId",
+      "fullName" : "fullName",
       "dateOfBirth" : 1,
       "room" : "room",
       "additionalInfoList" : [ {
@@ -11594,6 +11637,7 @@ open class StatsAPI {
       },
       "mobile" : "mobile",
       "externalId" : "externalId",
+      "fullName" : "fullName",
       "dateOfBirth" : 1,
       "room" : "room",
       "additionalInfoList" : [ {
@@ -11641,9 +11685,11 @@ open class StatsAPI {
       "closedBy" : "closedBy",
       "notes" : "notes",
       "patientId" : "patientId",
+      "entityType" : "entityType",
       "closedOn" : 1,
       "externalId" : "externalId",
       "active" : false,
+      "entityId" : "entityId",
       "updatedOn" : 6,
       "message" : "message",
       "type" : "type",
@@ -11661,9 +11707,11 @@ open class StatsAPI {
       "closedBy" : "closedBy",
       "notes" : "notes",
       "patientId" : "patientId",
+      "entityType" : "entityType",
       "closedOn" : 1,
       "externalId" : "externalId",
       "active" : false,
+      "entityId" : "entityId",
       "updatedOn" : 6,
       "message" : "message",
       "type" : "type",
@@ -11794,14 +11842,14 @@ open class StatsAPI {
     "deviceType" : "deviceType",
     "externalId" : "externalId",
     "active" : false,
-    "takenOn" : 1,
+    "takenOn" : 5,
     "postAction" : "postAction",
     "noteId" : "noteId",
     "contextId" : "contextId",
-    "updatedOn" : 7,
+    "updatedOn" : 5,
     "source" : "MANUAL",
     "deviceReading" : false,
-    "createdOn" : 4,
+    "createdOn" : 1,
     "userId" : "userId",
     "deviceId" : "deviceId",
     "platform" : "platform",
@@ -11824,14 +11872,14 @@ open class StatsAPI {
     "deviceType" : "deviceType",
     "externalId" : "externalId",
     "active" : false,
-    "takenOn" : 1,
+    "takenOn" : 5,
     "postAction" : "postAction",
     "noteId" : "noteId",
     "contextId" : "contextId",
-    "updatedOn" : 7,
+    "updatedOn" : 5,
     "source" : "MANUAL",
     "deviceReading" : false,
-    "createdOn" : 4,
+    "createdOn" : 1,
     "userId" : "userId",
     "deviceId" : "deviceId",
     "platform" : "platform",
@@ -11977,6 +12025,53 @@ open class StatsAPI {
         let requestBuilder: RequestBuilder<DashboardStats>.Type = SwaggerClientAPI.requestBuilderFactory.getBuilder()
 
         return requestBuilder.init(method: "GET", URLString: (url?.string ?? URLString), parameters: parameters, isBody: false, headers: headerParameters)
+    }
+
+    /**
+
+     - parameter tenantId: (path)  
+     - parameter completion: completion handler to receive the data and the error objects
+     */
+    open class func getStatsForDashboardByTenant(tenantId: String, completion: @escaping ((_ data: DashboardStats?,_ error: Error?) -> Void)) {
+        getStatsForDashboardByTenantWithRequestBuilder(tenantId: tenantId).execute { (response, error) -> Void in
+            completion(response?.body, error)
+        }
+    }
+
+
+    /**
+     - GET /ehealth/v2/stats/dashboard/stats/tenants/{tenantId}
+     - examples: [{contentType=application/json, example={
+  "caretakerCount" : 0,
+  "patientWithoutCaretakerCount" : 1,
+  "engagementCount" : 2,
+  "deviceCount" : 5,
+  "leadsCount" : 4,
+  "patientCount" : 6,
+  "zoneCount" : 5,
+  "unapprovedAppoinmentCount" : 2,
+  "unapprovedMedicineCount" : 7,
+  "productsCount" : 3,
+  "formsCount" : 9
+}}]
+     
+     - parameter tenantId: (path)  
+
+     - returns: RequestBuilder<DashboardStats> 
+     */
+    open class func getStatsForDashboardByTenantWithRequestBuilder(tenantId: String) -> RequestBuilder<DashboardStats> {
+        var path = "/ehealth/v2/stats/dashboard/stats/tenants/{tenantId}"
+        let tenantIdPreEscape = "\(tenantId)"
+        let tenantIdPostEscape = tenantIdPreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
+        path = path.replacingOccurrences(of: "{tenantId}", with: tenantIdPostEscape, options: .literal, range: nil)
+        let URLString = SwaggerClientAPI.basePath + path
+        let parameters: [String:Any]? = nil
+        
+        let url = URLComponents(string: URLString)
+
+        let requestBuilder: RequestBuilder<DashboardStats>.Type = SwaggerClientAPI.requestBuilderFactory.getBuilder()
+
+        return requestBuilder.init(method: "GET", URLString: (url?.string ?? URLString), parameters: parameters, isBody: false)
     }
 
 }

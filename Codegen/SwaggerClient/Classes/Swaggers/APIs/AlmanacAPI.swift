@@ -54,6 +54,7 @@ open class AlmanacAPI {
     "timestamp" : 1
   } ],
   "offset" : 6,
+  "totalPages" : 5,
   "totalCount" : 0
 }}]
      

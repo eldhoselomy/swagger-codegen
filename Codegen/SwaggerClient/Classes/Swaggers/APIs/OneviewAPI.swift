@@ -37,7 +37,7 @@ open class OneviewAPI {
       "patientId" : "patientId",
       "active" : false,
       "id" : "id",
-      "updatedOn" : 1,
+      "updatedOn" : 4,
       "healthScore" : {
         "notices" : [ {
           "type" : "SUGGESTION",
@@ -246,6 +246,7 @@ open class OneviewAPI {
       },
       "mobile" : "mobile",
       "externalId" : "externalId",
+      "fullName" : "fullName",
       "dateOfBirth" : 1,
       "room" : "room",
       "additionalInfoList" : [ {
@@ -299,14 +300,14 @@ open class OneviewAPI {
         "deviceType" : "deviceType",
         "externalId" : "externalId",
         "active" : false,
-        "takenOn" : 1,
+        "takenOn" : 5,
         "postAction" : "postAction",
         "noteId" : "noteId",
         "contextId" : "contextId",
-        "updatedOn" : 7,
+        "updatedOn" : 5,
         "source" : "MANUAL",
         "deviceReading" : false,
-        "createdOn" : 4,
+        "createdOn" : 1,
         "userId" : "userId",
         "deviceId" : "deviceId",
         "platform" : "platform",
@@ -326,14 +327,14 @@ open class OneviewAPI {
         "deviceType" : "deviceType",
         "externalId" : "externalId",
         "active" : false,
-        "takenOn" : 1,
+        "takenOn" : 5,
         "postAction" : "postAction",
         "noteId" : "noteId",
         "contextId" : "contextId",
-        "updatedOn" : 7,
+        "updatedOn" : 5,
         "source" : "MANUAL",
         "deviceReading" : false,
-        "createdOn" : 4,
+        "createdOn" : 1,
         "userId" : "userId",
         "deviceId" : "deviceId",
         "platform" : "platform",
@@ -353,16 +354,26 @@ open class OneviewAPI {
       "episodeType" : "RPM",
       "episodeStatus" : "COMPLETED",
       "episodeProgress" : {
+        "episodeType" : "RPM",
         "total" : 7,
         "maxValue" : 2,
         "completed" : 9,
+        "episodeId" : "episodeId",
         "percent" : 3,
         "remaining" : "remaining"
       },
       "patientId" : "patientId",
+      "careplanId" : "careplanId",
       "episodeId" : "episodeId",
       "episodeCompletedProgress" : {
+        "completed" : 1,
+        "percent" : 7,
+        "remaining" : 6
+      },
+      "episodeVitalProgress" : {
+        "total" : 1,
         "completed" : 4,
+        "episodeId" : "episodeId",
         "percent" : 1,
         "remaining" : 7
       }
@@ -374,7 +385,7 @@ open class OneviewAPI {
       "patientId" : "patientId",
       "active" : false,
       "id" : "id",
-      "updatedOn" : 1,
+      "updatedOn" : 4,
       "healthScore" : {
         "notices" : [ {
           "type" : "SUGGESTION",
@@ -583,6 +594,7 @@ open class OneviewAPI {
       },
       "mobile" : "mobile",
       "externalId" : "externalId",
+      "fullName" : "fullName",
       "dateOfBirth" : 1,
       "room" : "room",
       "additionalInfoList" : [ {
@@ -636,14 +648,14 @@ open class OneviewAPI {
         "deviceType" : "deviceType",
         "externalId" : "externalId",
         "active" : false,
-        "takenOn" : 1,
+        "takenOn" : 5,
         "postAction" : "postAction",
         "noteId" : "noteId",
         "contextId" : "contextId",
-        "updatedOn" : 7,
+        "updatedOn" : 5,
         "source" : "MANUAL",
         "deviceReading" : false,
-        "createdOn" : 4,
+        "createdOn" : 1,
         "userId" : "userId",
         "deviceId" : "deviceId",
         "platform" : "platform",
@@ -663,14 +675,14 @@ open class OneviewAPI {
         "deviceType" : "deviceType",
         "externalId" : "externalId",
         "active" : false,
-        "takenOn" : 1,
+        "takenOn" : 5,
         "postAction" : "postAction",
         "noteId" : "noteId",
         "contextId" : "contextId",
-        "updatedOn" : 7,
+        "updatedOn" : 5,
         "source" : "MANUAL",
         "deviceReading" : false,
-        "createdOn" : 4,
+        "createdOn" : 1,
         "userId" : "userId",
         "deviceId" : "deviceId",
         "platform" : "platform",
@@ -690,16 +702,26 @@ open class OneviewAPI {
       "episodeType" : "RPM",
       "episodeStatus" : "COMPLETED",
       "episodeProgress" : {
+        "episodeType" : "RPM",
         "total" : 7,
         "maxValue" : 2,
         "completed" : 9,
+        "episodeId" : "episodeId",
         "percent" : 3,
         "remaining" : "remaining"
       },
       "patientId" : "patientId",
+      "careplanId" : "careplanId",
       "episodeId" : "episodeId",
       "episodeCompletedProgress" : {
+        "completed" : 1,
+        "percent" : 7,
+        "remaining" : 6
+      },
+      "episodeVitalProgress" : {
+        "total" : 1,
         "completed" : 4,
+        "episodeId" : "episodeId",
         "percent" : 1,
         "remaining" : 7
       }
@@ -707,6 +729,7 @@ open class OneviewAPI {
     "totalAlertCount" : 1
   } ],
   "offset" : 6,
+  "totalPages" : 5,
   "totalCount" : 0
 }}]
      
@@ -765,9 +788,11 @@ open class OneviewAPI {
     "closedBy" : "closedBy",
     "notes" : "notes",
     "patientId" : "patientId",
+    "entityType" : "entityType",
     "closedOn" : 1,
     "externalId" : "externalId",
     "active" : false,
+    "entityId" : "entityId",
     "updatedOn" : 6,
     "message" : "message",
     "type" : "type",
@@ -785,9 +810,11 @@ open class OneviewAPI {
     "closedBy" : "closedBy",
     "notes" : "notes",
     "patientId" : "patientId",
+    "entityType" : "entityType",
     "closedOn" : 1,
     "externalId" : "externalId",
     "active" : false,
+    "entityId" : "entityId",
     "updatedOn" : 6,
     "message" : "message",
     "type" : "type",
@@ -803,6 +830,7 @@ open class OneviewAPI {
     "status" : "status"
   } ],
   "offset" : 6,
+  "totalPages" : 1,
   "totalCount" : 0
 }}]
      
@@ -1055,7 +1083,7 @@ open class OneviewAPI {
       "patientId" : "patientId",
       "active" : false,
       "id" : "id",
-      "updatedOn" : 1,
+      "updatedOn" : 4,
       "healthScore" : {
         "notices" : [ {
           "type" : "SUGGESTION",
@@ -1264,6 +1292,7 @@ open class OneviewAPI {
       },
       "mobile" : "mobile",
       "externalId" : "externalId",
+      "fullName" : "fullName",
       "dateOfBirth" : 1,
       "room" : "room",
       "additionalInfoList" : [ {
@@ -1317,14 +1346,14 @@ open class OneviewAPI {
         "deviceType" : "deviceType",
         "externalId" : "externalId",
         "active" : false,
-        "takenOn" : 1,
+        "takenOn" : 5,
         "postAction" : "postAction",
         "noteId" : "noteId",
         "contextId" : "contextId",
-        "updatedOn" : 7,
+        "updatedOn" : 5,
         "source" : "MANUAL",
         "deviceReading" : false,
-        "createdOn" : 4,
+        "createdOn" : 1,
         "userId" : "userId",
         "deviceId" : "deviceId",
         "platform" : "platform",
@@ -1344,14 +1373,14 @@ open class OneviewAPI {
         "deviceType" : "deviceType",
         "externalId" : "externalId",
         "active" : false,
-        "takenOn" : 1,
+        "takenOn" : 5,
         "postAction" : "postAction",
         "noteId" : "noteId",
         "contextId" : "contextId",
-        "updatedOn" : 7,
+        "updatedOn" : 5,
         "source" : "MANUAL",
         "deviceReading" : false,
-        "createdOn" : 4,
+        "createdOn" : 1,
         "userId" : "userId",
         "deviceId" : "deviceId",
         "platform" : "platform",
@@ -1371,16 +1400,26 @@ open class OneviewAPI {
       "episodeType" : "RPM",
       "episodeStatus" : "COMPLETED",
       "episodeProgress" : {
+        "episodeType" : "RPM",
         "total" : 7,
         "maxValue" : 2,
         "completed" : 9,
+        "episodeId" : "episodeId",
         "percent" : 3,
         "remaining" : "remaining"
       },
       "patientId" : "patientId",
+      "careplanId" : "careplanId",
       "episodeId" : "episodeId",
       "episodeCompletedProgress" : {
+        "completed" : 1,
+        "percent" : 7,
+        "remaining" : 6
+      },
+      "episodeVitalProgress" : {
+        "total" : 1,
         "completed" : 4,
+        "episodeId" : "episodeId",
         "percent" : 1,
         "remaining" : 7
       }
@@ -1392,7 +1431,7 @@ open class OneviewAPI {
       "patientId" : "patientId",
       "active" : false,
       "id" : "id",
-      "updatedOn" : 1,
+      "updatedOn" : 4,
       "healthScore" : {
         "notices" : [ {
           "type" : "SUGGESTION",
@@ -1601,6 +1640,7 @@ open class OneviewAPI {
       },
       "mobile" : "mobile",
       "externalId" : "externalId",
+      "fullName" : "fullName",
       "dateOfBirth" : 1,
       "room" : "room",
       "additionalInfoList" : [ {
@@ -1654,14 +1694,14 @@ open class OneviewAPI {
         "deviceType" : "deviceType",
         "externalId" : "externalId",
         "active" : false,
-        "takenOn" : 1,
+        "takenOn" : 5,
         "postAction" : "postAction",
         "noteId" : "noteId",
         "contextId" : "contextId",
-        "updatedOn" : 7,
+        "updatedOn" : 5,
         "source" : "MANUAL",
         "deviceReading" : false,
-        "createdOn" : 4,
+        "createdOn" : 1,
         "userId" : "userId",
         "deviceId" : "deviceId",
         "platform" : "platform",
@@ -1681,14 +1721,14 @@ open class OneviewAPI {
         "deviceType" : "deviceType",
         "externalId" : "externalId",
         "active" : false,
-        "takenOn" : 1,
+        "takenOn" : 5,
         "postAction" : "postAction",
         "noteId" : "noteId",
         "contextId" : "contextId",
-        "updatedOn" : 7,
+        "updatedOn" : 5,
         "source" : "MANUAL",
         "deviceReading" : false,
-        "createdOn" : 4,
+        "createdOn" : 1,
         "userId" : "userId",
         "deviceId" : "deviceId",
         "platform" : "platform",
@@ -1708,16 +1748,26 @@ open class OneviewAPI {
       "episodeType" : "RPM",
       "episodeStatus" : "COMPLETED",
       "episodeProgress" : {
+        "episodeType" : "RPM",
         "total" : 7,
         "maxValue" : 2,
         "completed" : 9,
+        "episodeId" : "episodeId",
         "percent" : 3,
         "remaining" : "remaining"
       },
       "patientId" : "patientId",
+      "careplanId" : "careplanId",
       "episodeId" : "episodeId",
       "episodeCompletedProgress" : {
+        "completed" : 1,
+        "percent" : 7,
+        "remaining" : 6
+      },
+      "episodeVitalProgress" : {
+        "total" : 1,
         "completed" : 4,
+        "episodeId" : "episodeId",
         "percent" : 1,
         "remaining" : 7
       }
@@ -1725,6 +1775,7 @@ open class OneviewAPI {
     "totalAlertCount" : 1
   } ],
   "offset" : 6,
+  "totalPages" : 5,
   "totalCount" : 0
 }}]
      

@@ -17,6 +17,7 @@ public struct Channel: Codable {
         case email = "EMAIL"
         case call = "CALL"
         case sms = "SMS"
+        case voip = "VOIP"
     }
     public var createdOn: Int64?
     public var updatedOn: Int64?
@@ -30,11 +31,12 @@ public struct Channel: Codable {
     public var userId: String?
     public var type: ModelType?
     public var source: String?
+    public var deviceId: String?
 
     public init() {
     }
 
-    public init(createdOn: Int64?, updatedOn: Int64?, tenantId: String?, applicationId: String?, archived: Bool?, externalId: String?, active: Bool?, id: String?, sourceId: String?, userId: String?, type: ModelType?, source: String?) {
+    public init(createdOn: Int64?, updatedOn: Int64?, tenantId: String?, applicationId: String?, archived: Bool?, externalId: String?, active: Bool?, id: String?, sourceId: String?, userId: String?, type: ModelType?, source: String?, deviceId: String?) {
         self.createdOn = createdOn
         self.updatedOn = updatedOn
         self.tenantId = tenantId
@@ -47,6 +49,7 @@ public struct Channel: Codable {
         self.userId = userId
         self.type = type
         self.source = source
+        self.deviceId = deviceId
     }
 
 

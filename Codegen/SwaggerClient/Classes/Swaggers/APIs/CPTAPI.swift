@@ -81,6 +81,7 @@ open class CPTAPI {
     "status" : "status"
   } ],
   "offset" : 6,
+  "totalPages" : 1,
   "totalCount" : 0
 }}]
      

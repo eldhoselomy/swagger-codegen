@@ -142,6 +142,7 @@ open class AlmanacV3API {
       },
       "mobile" : "mobile",
       "externalId" : "externalId",
+      "fullName" : "fullName",
       "dateOfBirth" : 1,
       "room" : "room",
       "additionalInfoList" : [ {
@@ -314,6 +315,7 @@ open class AlmanacV3API {
       },
       "mobile" : "mobile",
       "externalId" : "externalId",
+      "fullName" : "fullName",
       "dateOfBirth" : 1,
       "room" : "room",
       "additionalInfoList" : [ {
@@ -468,6 +470,7 @@ open class AlmanacV3API {
       },
       "mobile" : "mobile",
       "externalId" : "externalId",
+      "fullName" : "fullName",
       "dateOfBirth" : 1,
       "room" : "room",
       "additionalInfoList" : [ {
@@ -640,6 +643,7 @@ open class AlmanacV3API {
       },
       "mobile" : "mobile",
       "externalId" : "externalId",
+      "fullName" : "fullName",
       "dateOfBirth" : 1,
       "room" : "room",
       "additionalInfoList" : [ {
@@ -685,6 +689,7 @@ open class AlmanacV3API {
     "timestamp" : 1
   } ],
   "offset" : 6,
+  "totalPages" : 5,
   "totalCount" : 0
 }}]
      

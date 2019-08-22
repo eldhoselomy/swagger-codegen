@@ -345,6 +345,7 @@ open class AppointmentsAPI {
     "completedBy" : "completedBy"
   } ],
   "offset" : 6,
+  "totalPages" : 7,
   "totalCount" : 0
 }}]
      
@@ -1657,6 +1658,7 @@ open class AppointmentsAPI {
     "completedBy" : "completedBy"
   } ],
   "offset" : 6,
+  "totalPages" : 7,
   "totalCount" : 0
 }}]
      
@@ -1779,6 +1781,7 @@ open class AppointmentsAPI {
      - examples: [{contentType=application/json, example={
   "result" : [ "{}", "{}" ],
   "offset" : 6,
+  "totalPages" : 1,
   "totalCount" : 0
 }}]
      
@@ -1831,6 +1834,7 @@ open class AppointmentsAPI {
      - examples: [{contentType=application/json, example={
   "result" : [ "{}", "{}" ],
   "offset" : 6,
+  "totalPages" : 1,
   "totalCount" : 0
 }}]
      
@@ -2197,6 +2201,7 @@ open class AppointmentsAPI {
     "completedBy" : "completedBy"
   } ],
   "offset" : 6,
+  "totalPages" : 7,
   "totalCount" : 0
 }}]
      
@@ -3526,6 +3531,7 @@ open class AppointmentsAPI {
   },
   "mobile" : "mobile",
   "externalId" : "externalId",
+  "fullName" : "fullName",
   "dateOfBirth" : 1,
   "room" : "room",
   "additionalInfoList" : [ {
@@ -3676,6 +3682,7 @@ open class AppointmentsAPI {
   },
   "mobile" : "mobile",
   "externalId" : "externalId",
+  "fullName" : "fullName",
   "dateOfBirth" : 1,
   "room" : "room",
   "additionalInfoList" : [ {

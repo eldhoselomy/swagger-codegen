@@ -25,6 +25,7 @@ public struct AppointmentRequest: Codable {
         case careTaker = "CARE_TAKER"
         case user = "USER"
         case groupAdmin = "GROUP_ADMIN"
+        case tenantAdmin = "TENANT_ADMIN"
     }
     public var createdOn: Int64?
     public var updatedOn: Int64?

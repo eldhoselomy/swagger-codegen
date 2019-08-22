@@ -12,23 +12,23 @@ import Foundation
 
 public struct Link: Codable {
 
+    public var rel: String?
     public var uriBuilder: UriBuilder?
     public var rels: [String]?
-    public var rel: String?
-    public var uri: String?
     public var title: String?
+    public var uri: String?
     public var params: [String:String]?
     public var type: String?
 
     public init() {
     }
 
-    public init(uriBuilder: UriBuilder?, rels: [String]?, rel: String?, uri: String?, title: String?, params: [String:String]?, type: String?) {
+    public init(rel: String?, uriBuilder: UriBuilder?, rels: [String]?, title: String?, uri: String?, params: [String:String]?, type: String?) {
+        self.rel = rel
         self.uriBuilder = uriBuilder
         self.rels = rels
-        self.rel = rel
-        self.uri = uri
         self.title = title
+        self.uri = uri
         self.params = params
         self.type = type
     }

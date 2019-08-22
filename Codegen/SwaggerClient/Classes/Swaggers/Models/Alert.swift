@@ -28,6 +28,8 @@ public struct Alert: Codable {
     public var notes: String?
     public var closedBy: String?
     public var closedOn: Int64?
+    public var entityId: String?
+    public var entityType: String?
     public var patientId: String?
     public var caretakerId: String?
     public var closed: Bool?
@@ -35,7 +37,7 @@ public struct Alert: Codable {
     public init() {
     }
 
-    public init(createdOn: Int64?, updatedOn: Int64?, tenantId: String?, applicationId: String?, archived: Bool?, externalId: String?, active: Bool?, id: String?, message: String?, notifierId: String?, causerId: String?, type: String?, status: String?, notes: String?, closedBy: String?, closedOn: Int64?, patientId: String?, caretakerId: String?, closed: Bool?) {
+    public init(createdOn: Int64?, updatedOn: Int64?, tenantId: String?, applicationId: String?, archived: Bool?, externalId: String?, active: Bool?, id: String?, message: String?, notifierId: String?, causerId: String?, type: String?, status: String?, notes: String?, closedBy: String?, closedOn: Int64?, entityId: String?, entityType: String?, patientId: String?, caretakerId: String?, closed: Bool?) {
         self.createdOn = createdOn
         self.updatedOn = updatedOn
         self.tenantId = tenantId
@@ -52,6 +54,8 @@ public struct Alert: Codable {
         self.notes = notes
         self.closedBy = closedBy
         self.closedOn = closedOn
+        self.entityId = entityId
+        self.entityType = entityType
         self.patientId = patientId
         self.caretakerId = caretakerId
         self.closed = closed

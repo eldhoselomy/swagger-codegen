@@ -21,26 +21,26 @@ public struct Feature: Codable {
         case appointment = "APPOINTMENT"
     }
     public var type: ModelType?
-    public var androidCaretakerAPPEnabled: Bool?
+    public var portalEnabled: Bool?
     public var iosguardianAPPEnabled: Bool?
     public var iospateintAPPEnabled: Bool?
     public var ioscaretakerAPPEnabled: Bool?
     public var androidGuardianAPPEnabled: Bool?
     public var androidPateintAPPEnabled: Bool?
-    public var portalEnabled: Bool?
+    public var androidCaretakerAPPEnabled: Bool?
 
     public init() {
     }
 
-    public init(type: ModelType?, androidCaretakerAPPEnabled: Bool?, iosguardianAPPEnabled: Bool?, iospateintAPPEnabled: Bool?, ioscaretakerAPPEnabled: Bool?, androidGuardianAPPEnabled: Bool?, androidPateintAPPEnabled: Bool?, portalEnabled: Bool?) {
+    public init(type: ModelType?, portalEnabled: Bool?, iosguardianAPPEnabled: Bool?, iospateintAPPEnabled: Bool?, ioscaretakerAPPEnabled: Bool?, androidGuardianAPPEnabled: Bool?, androidPateintAPPEnabled: Bool?, androidCaretakerAPPEnabled: Bool?) {
         self.type = type
-        self.androidCaretakerAPPEnabled = androidCaretakerAPPEnabled
+        self.portalEnabled = portalEnabled
         self.iosguardianAPPEnabled = iosguardianAPPEnabled
         self.iospateintAPPEnabled = iospateintAPPEnabled
         self.ioscaretakerAPPEnabled = ioscaretakerAPPEnabled
         self.androidGuardianAPPEnabled = androidGuardianAPPEnabled
         self.androidPateintAPPEnabled = androidPateintAPPEnabled
-        self.portalEnabled = portalEnabled
+        self.androidCaretakerAPPEnabled = androidCaretakerAPPEnabled
     }
 
 

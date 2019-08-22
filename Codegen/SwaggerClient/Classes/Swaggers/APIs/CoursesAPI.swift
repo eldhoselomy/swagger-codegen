@@ -175,6 +175,7 @@ open class CoursesAPI {
     "tags" : [ "tags", "tags" ]
   } ],
   "offset" : 6,
+  "totalPages" : 5,
   "totalCount" : 0
 }}]
      

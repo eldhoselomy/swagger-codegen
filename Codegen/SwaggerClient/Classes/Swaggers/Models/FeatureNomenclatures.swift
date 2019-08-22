@@ -33,11 +33,12 @@ public struct FeatureNomenclatures: Codable {
     public var forms: Forms?
     public var tags: Tags?
     public var devices: Devices?
+    public var guardians: Guardians?
 
     public init() {
     }
 
-    public init(caretakers: Caretakers?, administrators: Administrators?, patients: Patients?, leads: Leads?, engagements: Engagements?, adhocTasks: AdhocTasks?, appointments: Appointments?, shifts: Shifts?, careplans: Careplans?, groups: Groups?, agencies: Agencies?, locations: Locations?, services: Services?, products: Products?, taxes: Taxes?, diets: Diets?, courses: Courses?, vitals: Vitals?, forms: Forms?, tags: Tags?, devices: Devices?) {
+    public init(caretakers: Caretakers?, administrators: Administrators?, patients: Patients?, leads: Leads?, engagements: Engagements?, adhocTasks: AdhocTasks?, appointments: Appointments?, shifts: Shifts?, careplans: Careplans?, groups: Groups?, agencies: Agencies?, locations: Locations?, services: Services?, products: Products?, taxes: Taxes?, diets: Diets?, courses: Courses?, vitals: Vitals?, forms: Forms?, tags: Tags?, devices: Devices?, guardians: Guardians?) {
         self.caretakers = caretakers
         self.administrators = administrators
         self.patients = patients
@@ -59,6 +60,7 @@ public struct FeatureNomenclatures: Codable {
         self.forms = forms
         self.tags = tags
         self.devices = devices
+        self.guardians = guardians
     }
 
 

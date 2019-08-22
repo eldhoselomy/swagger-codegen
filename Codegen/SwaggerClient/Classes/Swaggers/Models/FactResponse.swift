@@ -37,12 +37,12 @@ public struct FactResponse: Codable {
     public var changeId: String?
     public var actorName: String?
     public var forName: String?
-    public var entity: String?
+    public var entity: JSONValue?
 
     public init() {
     }
 
-    public init(id: String?, actorId: String?, entityId: String?, forId: String?, timestamp: Int64?, type: ModelType?, changeId: String?, actorName: String?, forName: String?, entity: String?) {
+    public init(id: String?, actorId: String?, entityId: String?, forId: String?, timestamp: Int64?, type: ModelType?, changeId: String?, actorName: String?, forName: String?, entity: JSONValue?) {
         self.id = id
         self.actorId = actorId
         self.entityId = entityId

@@ -28,6 +28,8 @@ open class ServicesAPI {
     /**
      - POST /ehealth/v2/services/categories
      - examples: [{contentType=application/json, example={
+  "image" : "image",
+  "color" : "color",
   "name" : "name",
   "tenantId" : "tenantId",
   "id" : "id"
@@ -168,10 +170,14 @@ open class ServicesAPI {
     /**
      - GET /ehealth/v2/services/categiories/tenants/{tenantId}
      - examples: [{contentType=application/json, example=[ {
+  "image" : "image",
+  "color" : "color",
   "name" : "name",
   "tenantId" : "tenantId",
   "id" : "id"
 }, {
+  "image" : "image",
+  "color" : "color",
   "name" : "name",
   "tenantId" : "tenantId",
   "id" : "id"

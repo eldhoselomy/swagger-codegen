@@ -15,14 +15,18 @@ public struct ServiceCategory: Codable {
     public var id: String?
     public var name: String?
     public var tenantId: String?
+    public var image: String?
+    public var color: String?
 
     public init() {
     }
 
-    public init(id: String?, name: String?, tenantId: String?) {
+    public init(id: String?, name: String?, tenantId: String?, image: String?, color: String?) {
         self.id = id
         self.name = name
         self.tenantId = tenantId
+        self.image = image
+        self.color = color
     }
 
 

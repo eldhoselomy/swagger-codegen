@@ -12,35 +12,41 @@ import Foundation
 
 public struct Device: Codable {
 
-    public enum DeviceCapabilities: String, Codable { 
-        case bloodPressure = "BLOOD_PRESSURE"
-        case bloodGlucose = "BLOOD_GLUCOSE"
-        case hemoglobin = "HEMOGLOBIN"
-        case weight = "WEIGHT"
-        case bodyAnalysis = "BODY_ANALYSIS"
-        case spo2 = "SPO2"
-        case ecg = "ECG"
-        case heartRate = "HEART_RATE"
-        case urineAnalysis = "URINE_ANALYSIS"
-        case sleepTracking = "SLEEP_TRACKING"
-        case bmi = "BMI"
-        case fatPercentage = "FAT_PERCENTAGE"
-        case waterContent = "WATER_CONTENT"
-        case hba1c = "HBA1C"
-        case lipidProfile = "LIPID_PROFILE"
-        case boneMass = "BONE_MASS"
-        case muscleMass = "MUSCLE_MASS"
-        case temperature = "TEMPERATURE"
-    }
-    public var model: String?
-    public var deviceCapabilities: [DeviceCapabilities]?
+    public var createdOn: Int64?
+    public var updatedOn: Int64?
+    public var tenantId: String?
+    public var applicationId: String?
+    public var archived: Bool?
+    public var externalId: String?
+    public var active: Bool?
+    public var id: String?
+    public var userId: String?
+    public var deviceId: String?
+    public var name: String?
+    public var type: String?
+    public var parameters: String?
+    public var mobileNumber: String?
+    public var status: String?
 
     public init() {
     }
 
-    public init(model: String?, deviceCapabilities: [DeviceCapabilities]?) {
-        self.model = model
-        self.deviceCapabilities = deviceCapabilities
+    public init(createdOn: Int64?, updatedOn: Int64?, tenantId: String?, applicationId: String?, archived: Bool?, externalId: String?, active: Bool?, id: String?, userId: String?, deviceId: String?, name: String?, type: String?, parameters: String?, mobileNumber: String?, status: String?) {
+        self.createdOn = createdOn
+        self.updatedOn = updatedOn
+        self.tenantId = tenantId
+        self.applicationId = applicationId
+        self.archived = archived
+        self.externalId = externalId
+        self.active = active
+        self.id = id
+        self.userId = userId
+        self.deviceId = deviceId
+        self.name = name
+        self.type = type
+        self.parameters = parameters
+        self.mobileNumber = mobileNumber
+        self.status = status
     }
 
 

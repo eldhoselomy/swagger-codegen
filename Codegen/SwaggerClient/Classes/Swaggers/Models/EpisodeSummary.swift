@@ -26,20 +26,24 @@ public struct EpisodeSummary: Codable {
     }
     public var episodeId: String?
     public var patientId: String?
+    public var careplanId: String?
     public var episodeType: EpisodeType?
     public var episodeStatus: EpisodeStatus?
     public var episodeProgress: EpisodeTMSProgress?
+    public var episodeVitalProgress: EpisodeVitalProgress?
     public var episodeCompletedProgress: EpisodeProgress?
 
     public init() {
     }
 
-    public init(episodeId: String?, patientId: String?, episodeType: EpisodeType?, episodeStatus: EpisodeStatus?, episodeProgress: EpisodeTMSProgress?, episodeCompletedProgress: EpisodeProgress?) {
+    public init(episodeId: String?, patientId: String?, careplanId: String?, episodeType: EpisodeType?, episodeStatus: EpisodeStatus?, episodeProgress: EpisodeTMSProgress?, episodeVitalProgress: EpisodeVitalProgress?, episodeCompletedProgress: EpisodeProgress?) {
         self.episodeId = episodeId
         self.patientId = patientId
+        self.careplanId = careplanId
         self.episodeType = episodeType
         self.episodeStatus = episodeStatus
         self.episodeProgress = episodeProgress
+        self.episodeVitalProgress = episodeVitalProgress
         self.episodeCompletedProgress = episodeCompletedProgress
     }
 

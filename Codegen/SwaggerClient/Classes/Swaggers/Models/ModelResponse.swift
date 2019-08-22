@@ -12,16 +12,16 @@ import Foundation
 
 public struct ModelResponse: Codable {
 
-    public var entity: String?
     public var cookies: [String:NewCookie]?
     public var lastModified: Date?
     public var date: Date?
-    public var headers: [String:[String]]?
+    public var headers: [String:[JSONValue]]?
+    public var entity: JSONValue?
     public var status: Int?
+    public var metadata: [String:[JSONValue]]?
     public var mediaType: MediaType?
-    public var metadata: [String:[String]]?
-    public var allowedMethods: [String]?
     public var statusInfo: StatusType?
+    public var allowedMethods: [String]?
     public var entityTag: EntityTag?
     public var links: [Link]?
     public var stringHeaders: [String:[String]]?
@@ -32,17 +32,17 @@ public struct ModelResponse: Codable {
     public init() {
     }
 
-    public init(entity: String?, cookies: [String:NewCookie]?, lastModified: Date?, date: Date?, headers: [String:[String]]?, status: Int?, mediaType: MediaType?, metadata: [String:[String]]?, allowedMethods: [String]?, statusInfo: StatusType?, entityTag: EntityTag?, links: [Link]?, stringHeaders: [String:[String]]?, length: Int?, language: Locale?, location: String?) {
-        self.entity = entity
+    public init(cookies: [String:NewCookie]?, lastModified: Date?, date: Date?, headers: [String:[JSONValue]]?, entity: JSONValue?, status: Int?, metadata: [String:[JSONValue]]?, mediaType: MediaType?, statusInfo: StatusType?, allowedMethods: [String]?, entityTag: EntityTag?, links: [Link]?, stringHeaders: [String:[String]]?, length: Int?, language: Locale?, location: String?) {
         self.cookies = cookies
         self.lastModified = lastModified
         self.date = date
         self.headers = headers
+        self.entity = entity
         self.status = status
-        self.mediaType = mediaType
         self.metadata = metadata
-        self.allowedMethods = allowedMethods
+        self.mediaType = mediaType
         self.statusInfo = statusInfo
+        self.allowedMethods = allowedMethods
         self.entityTag = entityTag
         self.links = links
         self.stringHeaders = stringHeaders

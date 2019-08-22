@@ -7,6 +7,9 @@
 
 import Foundation
 import Alamofire
+#if canImport(CooeyDotzu)
+import CooeyDotzu
+#endif
 
 class AlamofireRequestBuilderFactory: RequestBuilderFactory {
     func getNonDecodableBuilder<T>() -> RequestBuilder<T>.Type {
@@ -33,6 +36,11 @@ open class AlamofireRequestBuilder<T>: RequestBuilder<T> {
     open func createSessionManager() -> Alamofire.SessionManager {
         let configuration = URLSessionConfiguration.default
         configuration.httpAdditionalHeaders = buildHeaders()
+        #if canImport(CooeyDotzu)
+        DispatchQueue.main.async {
+            Dotzu.sharedManager.addLogger(session: configuration)
+        }
+        #endif
         return Alamofire.SessionManager(configuration: configuration)
     }
 

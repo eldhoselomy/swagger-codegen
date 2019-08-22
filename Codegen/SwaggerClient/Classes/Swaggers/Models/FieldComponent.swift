@@ -22,13 +22,13 @@ public struct FieldComponent: Codable {
     public var title: String?
     public var type: String?
     public var contextGraphEnabled: Bool?
-    public var template: String?
+    public var template: JSONValue?
     public var mandatory: Bool?
 
     public init() {
     }
 
-    public init(createdOn: Int64?, updatedOn: Int64?, tenantId: String?, applicationId: String?, archived: Bool?, externalId: String?, active: Bool?, title: String?, type: String?, contextGraphEnabled: Bool?, template: String?, mandatory: Bool?) {
+    public init(createdOn: Int64?, updatedOn: Int64?, tenantId: String?, applicationId: String?, archived: Bool?, externalId: String?, active: Bool?, title: String?, type: String?, contextGraphEnabled: Bool?, template: JSONValue?, mandatory: Bool?) {
         self.createdOn = createdOn
         self.updatedOn = updatedOn
         self.tenantId = tenantId

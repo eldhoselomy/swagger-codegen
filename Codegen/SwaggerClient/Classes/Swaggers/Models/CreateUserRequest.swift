@@ -80,13 +80,14 @@ public struct CreateUserRequest: Codable {
     public var insuranceInformation: EpisodeInsuranceInformation?
     public var requestId: String?
     public var partnerId: String?
+    public var fullName: String?
     public var address: Address?
     public var passwordResetEnabled: Bool?
 
     public init() {
     }
 
-    public init(createdOn: Int64?, updatedOn: Int64?, tenantId: String?, applicationId: String?, archived: Bool?, externalId: String?, active: Bool?, id: String?, firstName: String?, lastName: String?, dateOfBirth: Int64?, email: String?, username: String?, password: String?, authenticationProvider: AuthenticationProvider?, country: String?, mobile: String?, gender: String?, authId: String?, authToken: String?, userSettings: UserSettings?, publicId: Int64?, groupId: String?, type: String?, skill: String?, icdCodes: [String]?, additionalInfoList: [FieldComponent]?, userStatus: Int?, careTaker: String?, alarmId: String?, allergires: [Allergy]?, room: String?, governmentId: String?, internalId: String?, status: String?, age: Int?, weight: Weight?, pulse: String?, height: Height?, hipSize: HipSize?, waistSize: WaistSize?, category: String?, occupation: String?, education: String?, maratialstatus: String?, parameters: String?, bloodGroup: String?, profilePhotoId: String?, profilePhotoURL: String?, emergencyContact: String?, shiftId: String?, shiftTimings: String?, timeZone: String?, hourlyPrice: Float?, currency: String?, profileTags: [String]?, zipCode: String?, encryptedPassword: String?, countryCode: String?, insuranceInformation: EpisodeInsuranceInformation?, requestId: String?, partnerId: String?, address: Address?, passwordResetEnabled: Bool?) {
+    public init(createdOn: Int64?, updatedOn: Int64?, tenantId: String?, applicationId: String?, archived: Bool?, externalId: String?, active: Bool?, id: String?, firstName: String?, lastName: String?, dateOfBirth: Int64?, email: String?, username: String?, password: String?, authenticationProvider: AuthenticationProvider?, country: String?, mobile: String?, gender: String?, authId: String?, authToken: String?, userSettings: UserSettings?, publicId: Int64?, groupId: String?, type: String?, skill: String?, icdCodes: [String]?, additionalInfoList: [FieldComponent]?, userStatus: Int?, careTaker: String?, alarmId: String?, allergires: [Allergy]?, room: String?, governmentId: String?, internalId: String?, status: String?, age: Int?, weight: Weight?, pulse: String?, height: Height?, hipSize: HipSize?, waistSize: WaistSize?, category: String?, occupation: String?, education: String?, maratialstatus: String?, parameters: String?, bloodGroup: String?, profilePhotoId: String?, profilePhotoURL: String?, emergencyContact: String?, shiftId: String?, shiftTimings: String?, timeZone: String?, hourlyPrice: Float?, currency: String?, profileTags: [String]?, zipCode: String?, encryptedPassword: String?, countryCode: String?, insuranceInformation: EpisodeInsuranceInformation?, requestId: String?, partnerId: String?, fullName: String?, address: Address?, passwordResetEnabled: Bool?) {
         self.createdOn = createdOn
         self.updatedOn = updatedOn
         self.tenantId = tenantId
@@ -149,6 +150,7 @@ public struct CreateUserRequest: Codable {
         self.insuranceInformation = insuranceInformation
         self.requestId = requestId
         self.partnerId = partnerId
+        self.fullName = fullName
         self.address = address
         self.passwordResetEnabled = passwordResetEnabled
     }

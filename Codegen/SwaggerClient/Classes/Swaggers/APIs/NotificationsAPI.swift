@@ -154,6 +154,7 @@ open class NotificationsAPI {
     "lang" : "lang"
   } ],
   "offset" : 6,
+  "totalPages" : 1,
   "totalCount" : 0
 }}]
      
@@ -233,6 +234,7 @@ open class NotificationsAPI {
     "actedOn" : "actedOn"
   } ],
   "offset" : 6,
+  "totalPages" : 5,
   "totalCount" : 0
 }}]
      
@@ -297,6 +299,94 @@ open class NotificationsAPI {
         let url = URLComponents(string: URLString)
 
         let requestBuilder: RequestBuilder<Int>.Type = SwaggerClientAPI.requestBuilderFactory.getBuilder()
+
+        return requestBuilder.init(method: "GET", URLString: (url?.string ?? URLString), parameters: parameters, isBody: false)
+    }
+
+    /**
+
+     - parameter userId: (path)  
+     - parameter completion: completion handler to receive the data and the error objects
+     */
+    open class func markAsReadAllNotifications(userId: String, completion: @escaping ((_ data: UpdateCountResponseDTO?,_ error: Error?) -> Void)) {
+        markAsReadAllNotificationsWithRequestBuilder(userId: userId).execute { (response, error) -> Void in
+            completion(response?.body, error)
+        }
+    }
+
+
+    /**
+     - PUT /ehealth/v2/notifications/read/all/{userId}
+     - examples: [{contentType=application/json, example={
+  "acknowledged" : false,
+  "modifiedCount" : 6,
+  "matchedCount" : 0
+}}]
+     
+     - parameter userId: (path)  
+
+     - returns: RequestBuilder<UpdateCountResponseDTO> 
+     */
+    open class func markAsReadAllNotificationsWithRequestBuilder(userId: String) -> RequestBuilder<UpdateCountResponseDTO> {
+        var path = "/ehealth/v2/notifications/read/all/{userId}"
+        let userIdPreEscape = "\(userId)"
+        let userIdPostEscape = userIdPreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
+        path = path.replacingOccurrences(of: "{userId}", with: userIdPostEscape, options: .literal, range: nil)
+        let URLString = SwaggerClientAPI.basePath + path
+        let parameters: [String:Any]? = nil
+        
+        let url = URLComponents(string: URLString)
+
+        let requestBuilder: RequestBuilder<UpdateCountResponseDTO>.Type = SwaggerClientAPI.requestBuilderFactory.getBuilder()
+
+        return requestBuilder.init(method: "PUT", URLString: (url?.string ?? URLString), parameters: parameters, isBody: false)
+    }
+
+    /**
+
+     - parameter userId: (path)  
+     - parameter completion: completion handler to receive the data and the error objects
+     */
+    open class func test(userId: String, completion: @escaping ((_ data: PushNotification?,_ error: Error?) -> Void)) {
+        testWithRequestBuilder(userId: userId).execute { (response, error) -> Void in
+            completion(response?.body, error)
+        }
+    }
+
+
+    /**
+     - GET /ehealth/v2/notifications/test/push/{userId}
+     - examples: [{contentType=application/json, example={
+  "scheduledOn" : 0,
+  "entityType" : "ACTION_ITEM",
+  "persistNotification" : false,
+  "dataMap" : {
+    "key" : "dataMap"
+  },
+  "action" : "action",
+  "entityId" : "entityId",
+  "id" : "id",
+  "title" : "title",
+  "toUserId" : "toUserId",
+  "contentAvailable" : false,
+  "content" : "content"
+}}]
+     
+     - parameter userId: (path)  
+
+     - returns: RequestBuilder<PushNotification> 
+     */
+    open class func testWithRequestBuilder(userId: String) -> RequestBuilder<PushNotification> {
+        var path = "/ehealth/v2/notifications/test/push/{userId}"
+        let userIdPreEscape = "\(userId)"
+        let userIdPostEscape = userIdPreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
+        path = path.replacingOccurrences(of: "{userId}", with: userIdPostEscape, options: .literal, range: nil)
+        let URLString = SwaggerClientAPI.basePath + path
+        let parameters: [String:Any]? = nil
+        
+        let url = URLComponents(string: URLString)
+
+        let requestBuilder: RequestBuilder<PushNotification>.Type = SwaggerClientAPI.requestBuilderFactory.getBuilder()
 
         return requestBuilder.init(method: "GET", URLString: (url?.string ?? URLString), parameters: parameters, isBody: false)
     }

@@ -99,6 +99,7 @@ open class FeedsAPI {
     }
   } ],
   "offset" : 6,
+  "totalPages" : 5,
   "totalCount" : 0
 }}]
      
@@ -216,6 +217,7 @@ open class FeedsAPI {
     }
   } ],
   "offset" : 6,
+  "totalPages" : 5,
   "totalCount" : 0
 }}]
      

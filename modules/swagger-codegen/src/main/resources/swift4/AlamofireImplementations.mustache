@@ -37,7 +37,9 @@ open class AlamofireRequestBuilder<T>: RequestBuilder<T> {
         let configuration = URLSessionConfiguration.default
         configuration.httpAdditionalHeaders = buildHeaders()
         #if canImport(CooeyDotzu)
-        Dotzu.sharedManager.addLogger(session: configuration)
+        DispatchQueue.main.async {
+            Dotzu.sharedManager.addLogger(session: configuration)
+        }
         #endif
         return Alamofire.SessionManager(configuration: configuration)
     }

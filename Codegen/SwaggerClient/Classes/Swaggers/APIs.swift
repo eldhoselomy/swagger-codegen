@@ -10,8 +10,15 @@ import Foundation
 open class SwaggerClientAPI {
     open static var basePath = "https://localhost"
     open static var credential: URLCredential?
-    open static var customHeaders: [String:String] = [:]
     open static var requestBuilderFactory: RequestBuilderFactory = AlamofireRequestBuilderFactory()
+    private static let deviceID: String = UIDevice.current.identifierForVendor?.uuidString ?? ""
+    open static var customHeaders: [String:String]{
+        return [
+            "requestId" :  UUID().uuidString,
+            "deviceId"  : deviceID
+        ]
+    }
+
 }
 
 open class RequestBuilder<T> {

@@ -14,6 +14,44 @@ import Alamofire
 open class FormsAPI {
     /**
 
+     - parameter formBluePrintId: (path)  
+     - parameter completion: completion handler to receive the data and the error objects
+     */
+    open class func archiveFormBlueprint(formBluePrintId: String, completion: @escaping ((_ data: Void?,_ error: Error?) -> Void)) {
+        archiveFormBlueprintWithRequestBuilder(formBluePrintId: formBluePrintId).execute { (response, error) -> Void in
+            if error == nil {
+                completion((), error)
+            } else {
+                completion(nil, error)
+            }
+        }
+    }
+
+
+    /**
+     - DELETE /ehealth/v2/forms/blueprints/{formBluePrintId}
+     
+     - parameter formBluePrintId: (path)  
+
+     - returns: RequestBuilder<Void> 
+     */
+    open class func archiveFormBlueprintWithRequestBuilder(formBluePrintId: String) -> RequestBuilder<Void> {
+        var path = "/ehealth/v2/forms/blueprints/{formBluePrintId}"
+        let formBluePrintIdPreEscape = "\(formBluePrintId)"
+        let formBluePrintIdPostEscape = formBluePrintIdPreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
+        path = path.replacingOccurrences(of: "{formBluePrintId}", with: formBluePrintIdPostEscape, options: .literal, range: nil)
+        let URLString = SwaggerClientAPI.basePath + path
+        let parameters: [String:Any]? = nil
+        
+        let url = URLComponents(string: URLString)
+
+        let requestBuilder: RequestBuilder<Void>.Type = SwaggerClientAPI.requestBuilderFactory.getNonDecodableBuilder()
+
+        return requestBuilder.init(method: "DELETE", URLString: (url?.string ?? URLString), parameters: parameters, isBody: false)
+    }
+
+    /**
+
      - parameter formId: (path)  
      - parameter completion: completion handler to receive the data and the error objects
      */

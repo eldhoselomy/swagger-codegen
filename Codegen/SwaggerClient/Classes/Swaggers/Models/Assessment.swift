@@ -12,13 +12,15 @@ import Foundation
 
 public struct Assessment: Codable {
 
-    public var signature: String?
+    public var subjective: String?
+    public var objective: String?
 
     public init() {
     }
 
-    public init(signature: String?) {
-        self.signature = signature
+    public init(subjective: String?, objective: String?) {
+        self.subjective = subjective
+        self.objective = objective
     }
 
 

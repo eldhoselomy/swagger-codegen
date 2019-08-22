@@ -8,6 +8,8 @@
 import Foundation
 
 public enum JSONValue: Codable {
+
+    case null()
     case string(String)
     case int(Int)
     case double(Double)
@@ -24,7 +26,9 @@ public enum JSONValue: Codable {
             .or((try? container.decode(Bool.self)).map(JSONValue.bool))
             .or((try? container.decode([String: JSONValue].self)).map(JSONValue.object))
             .or((try? container.decode([JSONValue].self)).map(JSONValue.array))
+            .or(container.decodeNil() ? JSONValue.null() : nil)
             .resolve(with: DecodingError.typeMismatch(JSONValue.self, DecodingError.Context(codingPath: container.codingPath, debugDescription: "Not a JSON")))
+
     }
 
     public func encode(to encoder: Encoder) throws {
@@ -36,10 +40,11 @@ public enum JSONValue: Codable {
         case .bool(let bool): try container.encode(bool)
         case .object(let obj): try container.encode(obj)
         case .array(let array): try container.encode(array)
+        case .null(): try container.encodeNil()
         }
     }
 
-    var stringValue: String {
+    public var stringValue: String? {
         let encoder = JSONEncoder()
         encoder.outputFormatting = .prettyPrinted
         if let data = try? encoder.encode(self){
@@ -47,9 +52,10 @@ public enum JSONValue: Codable {
                 return jsonString
             }
         }
-        return ""
+        return nil
     }
 }
+
 
 extension Optional {
     func or(_ other: Optional) -> Optional {

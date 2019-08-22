@@ -235,7 +235,8 @@ open class CareplansAPI {
   "evaluation" : "evaluation",
   "archived" : false,
   "assessment" : {
-    "signature" : "signature"
+    "subjective" : "subjective",
+    "objective" : "objective"
   },
   "numOfDays" : 6,
   "careplanBluprintId" : "careplanBluprintId",
@@ -1737,7 +1738,8 @@ open class CareplansAPI {
   "evaluation" : "evaluation",
   "archived" : false,
   "assessment" : {
-    "signature" : "signature"
+    "subjective" : "subjective",
+    "objective" : "objective"
   },
   "numOfDays" : 6,
   "careplanBluprintId" : "careplanBluprintId",
@@ -2509,7 +2511,8 @@ open class CareplansAPI {
   "evaluation" : "evaluation",
   "archived" : false,
   "assessment" : {
-    "signature" : "signature"
+    "subjective" : "subjective",
+    "objective" : "objective"
   },
   "numOfDays" : 6,
   "careplanBluprintId" : "careplanBluprintId",
@@ -3803,7 +3806,8 @@ open class CareplansAPI {
   "evaluation" : "evaluation",
   "archived" : false,
   "assessment" : {
-    "signature" : "signature"
+    "subjective" : "subjective",
+    "objective" : "objective"
   },
   "numOfDays" : 6,
   "careplanBluprintId" : "careplanBluprintId",
@@ -4616,7 +4620,8 @@ open class CareplansAPI {
   "evaluation" : "evaluation",
   "archived" : false,
   "assessment" : {
-    "signature" : "signature"
+    "subjective" : "subjective",
+    "objective" : "objective"
   },
   "numOfDays" : 6,
   "careplanBluprintId" : "careplanBluprintId",
@@ -5213,10 +5218,11 @@ open class CareplansAPI {
      - parameter tenantId: (query)  (optional)
      - parameter offset: (query)  (optional, default to 0)
      - parameter limit: (query)  (optional, default to 5)
+     - parameter state: (query)  (optional)
      - parameter completion: completion handler to receive the data and the error objects
      */
-    open class func getCareplans(xAuthToken: String? = nil, tenantId: String? = nil, offset: Int? = nil, limit: Int? = nil, completion: @escaping ((_ data: [CareplanBlueprint]?,_ error: Error?) -> Void)) {
-        getCareplansWithRequestBuilder(xAuthToken: xAuthToken, tenantId: tenantId, offset: offset, limit: limit).execute { (response, error) -> Void in
+    open class func getCareplans(xAuthToken: String? = nil, tenantId: String? = nil, offset: Int? = nil, limit: Int? = nil, state: String? = nil, completion: @escaping ((_ data: [CareplanBlueprint]?,_ error: Error?) -> Void)) {
+        getCareplansWithRequestBuilder(xAuthToken: xAuthToken, tenantId: tenantId, offset: offset, limit: limit, state: state).execute { (response, error) -> Void in
             completion(response?.body, error)
         }
     }
@@ -6016,10 +6022,11 @@ open class CareplansAPI {
      - parameter tenantId: (query)  (optional)
      - parameter offset: (query)  (optional, default to 0)
      - parameter limit: (query)  (optional, default to 5)
+     - parameter state: (query)  (optional)
 
      - returns: RequestBuilder<[CareplanBlueprint]> 
      */
-    open class func getCareplansWithRequestBuilder(xAuthToken: String? = nil, tenantId: String? = nil, offset: Int? = nil, limit: Int? = nil) -> RequestBuilder<[CareplanBlueprint]> {
+    open class func getCareplansWithRequestBuilder(xAuthToken: String? = nil, tenantId: String? = nil, offset: Int? = nil, limit: Int? = nil, state: String? = nil) -> RequestBuilder<[CareplanBlueprint]> {
         let path = "/ehealth/v2/careplans/blueprints"
         let URLString = SwaggerClientAPI.basePath + path
         let parameters: [String:Any]? = nil
@@ -6028,7 +6035,8 @@ open class CareplansAPI {
         url?.queryItems = APIHelper.mapValuesToQueryItems([
             "tenantId": tenantId, 
             "offset": offset?.encodeToJSON(), 
-            "limit": limit?.encodeToJSON()
+            "limit": limit?.encodeToJSON(), 
+            "state": state
         ])
         let nillableHeaders: [String: Any?] = [
             "X-Auth-Token": xAuthToken
@@ -6873,10 +6881,11 @@ open class CareplansAPI {
      
      - parameter patientId: (path)  
      - parameter xAuthToken: (header)  (optional)
+     - parameter state: (query)  (optional)
      - parameter completion: completion handler to receive the data and the error objects
      */
-    open class func getCareplansByTagsForPatient(patientId: String, xAuthToken: String? = nil, completion: @escaping ((_ data: [CareplanBlueprint]?,_ error: Error?) -> Void)) {
-        getCareplansByTagsForPatientWithRequestBuilder(patientId: patientId, xAuthToken: xAuthToken).execute { (response, error) -> Void in
+    open class func getCareplansByTagsForPatient(patientId: String, xAuthToken: String? = nil, state: String? = nil, completion: @escaping ((_ data: [CareplanBlueprint]?,_ error: Error?) -> Void)) {
+        getCareplansByTagsForPatientWithRequestBuilder(patientId: patientId, xAuthToken: xAuthToken, state: state).execute { (response, error) -> Void in
             completion(response?.body, error)
         }
     }
@@ -7674,10 +7683,11 @@ open class CareplansAPI {
      
      - parameter patientId: (path)  
      - parameter xAuthToken: (header)  (optional)
+     - parameter state: (query)  (optional)
 
      - returns: RequestBuilder<[CareplanBlueprint]> 
      */
-    open class func getCareplansByTagsForPatientWithRequestBuilder(patientId: String, xAuthToken: String? = nil) -> RequestBuilder<[CareplanBlueprint]> {
+    open class func getCareplansByTagsForPatientWithRequestBuilder(patientId: String, xAuthToken: String? = nil, state: String? = nil) -> RequestBuilder<[CareplanBlueprint]> {
         var path = "/ehealth/v2/careplans/blueprints/patient/{patientId}"
         let patientIdPreEscape = "\(patientId)"
         let patientIdPostEscape = patientIdPreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
@@ -7685,7 +7695,10 @@ open class CareplansAPI {
         let URLString = SwaggerClientAPI.basePath + path
         let parameters: [String:Any]? = nil
         
-        let url = URLComponents(string: URLString)
+        var url = URLComponents(string: URLString)
+        url?.queryItems = APIHelper.mapValuesToQueryItems([
+            "state": state
+        ])
         let nillableHeaders: [String: Any?] = [
             "X-Auth-Token": xAuthToken
         ]
@@ -8694,10 +8707,11 @@ open class CareplansAPI {
      - parameter end: (query)  (optional)
      - parameter offset: (query)  (optional, default to 0)
      - parameter limit: (query)  (optional, default to 5)
+     - parameter state: (query)  (optional)
      - parameter completion: completion handler to receive the data and the error objects
      */
-    open class func searchCareplan(xAuthToken: String? = nil, query: String? = nil, start: Int64? = nil, end: Int64? = nil, offset: Int? = nil, limit: Int? = nil, completion: @escaping ((_ data: [CareplanBlueprint]?,_ error: Error?) -> Void)) {
-        searchCareplanWithRequestBuilder(xAuthToken: xAuthToken, query: query, start: start, end: end, offset: offset, limit: limit).execute { (response, error) -> Void in
+    open class func searchCareplan(xAuthToken: String? = nil, query: String? = nil, start: Int64? = nil, end: Int64? = nil, offset: Int? = nil, limit: Int? = nil, state: String? = nil, completion: @escaping ((_ data: [CareplanBlueprint]?,_ error: Error?) -> Void)) {
+        searchCareplanWithRequestBuilder(xAuthToken: xAuthToken, query: query, start: start, end: end, offset: offset, limit: limit, state: state).execute { (response, error) -> Void in
             completion(response?.body, error)
         }
     }
@@ -9499,10 +9513,11 @@ open class CareplansAPI {
      - parameter end: (query)  (optional)
      - parameter offset: (query)  (optional, default to 0)
      - parameter limit: (query)  (optional, default to 5)
+     - parameter state: (query)  (optional)
 
      - returns: RequestBuilder<[CareplanBlueprint]> 
      */
-    open class func searchCareplanWithRequestBuilder(xAuthToken: String? = nil, query: String? = nil, start: Int64? = nil, end: Int64? = nil, offset: Int? = nil, limit: Int? = nil) -> RequestBuilder<[CareplanBlueprint]> {
+    open class func searchCareplanWithRequestBuilder(xAuthToken: String? = nil, query: String? = nil, start: Int64? = nil, end: Int64? = nil, offset: Int? = nil, limit: Int? = nil, state: String? = nil) -> RequestBuilder<[CareplanBlueprint]> {
         let path = "/ehealth/v2/careplans/blueprints/search"
         let URLString = SwaggerClientAPI.basePath + path
         let parameters: [String:Any]? = nil
@@ -9513,7 +9528,8 @@ open class CareplansAPI {
             "start": start?.encodeToJSON(), 
             "end": end?.encodeToJSON(), 
             "offset": offset?.encodeToJSON(), 
-            "limit": limit?.encodeToJSON()
+            "limit": limit?.encodeToJSON(), 
+            "state": state
         ])
         let nillableHeaders: [String: Any?] = [
             "X-Auth-Token": xAuthToken
@@ -10233,7 +10249,8 @@ open class CareplansAPI {
   "evaluation" : "evaluation",
   "archived" : false,
   "assessment" : {
-    "signature" : "signature"
+    "subjective" : "subjective",
+    "objective" : "objective"
   },
   "numOfDays" : 6,
   "careplanBluprintId" : "careplanBluprintId",
@@ -11051,7 +11068,8 @@ open class CareplansAPI {
   "evaluation" : "evaluation",
   "archived" : false,
   "assessment" : {
-    "signature" : "signature"
+    "subjective" : "subjective",
+    "objective" : "objective"
   },
   "numOfDays" : 6,
   "careplanBluprintId" : "careplanBluprintId",

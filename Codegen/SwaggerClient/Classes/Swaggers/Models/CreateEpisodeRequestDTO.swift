@@ -24,6 +24,7 @@ public struct CreateEpisodeRequestDTO: Codable {
         case inProgress = "IN_PROGRESS"
         case pendingStart = "PENDING_START"
     }
+    public var id: String?
     public var patientId: String?
     public var startTime: Int64?
     public var endTime: Int64?
@@ -48,7 +49,8 @@ public struct CreateEpisodeRequestDTO: Codable {
     public init() {
     }
 
-    public init(patientId: String?, startTime: Int64, endTime: Int64, careplanId: String?, episodeType: EpisodeType, properties: [String:String]?, icdCodeList: [Code], cptCodeList: [Code], insuranceInformation: EpisodeInsuranceInformation, consentFiles: [String]?, createdOn: Int64?, updatedOn: Int64?, tenantId: String?, archived: Bool?, active: Bool?, reason: String?, assignerId: String?, status: Status?, deviceModels: [String]?, noteId: String?) {
+    public init(id: String?, patientId: String?, startTime: Int64, endTime: Int64, careplanId: String?, episodeType: EpisodeType, properties: [String:String]?, icdCodeList: [Code], cptCodeList: [Code], insuranceInformation: EpisodeInsuranceInformation, consentFiles: [String]?, createdOn: Int64?, updatedOn: Int64?, tenantId: String?, archived: Bool?, active: Bool?, reason: String?, assignerId: String?, status: Status?, deviceModels: [String]?, noteId: String?) {
+        self.id = id
         self.patientId = patientId
         self.startTime = startTime
         self.endTime = endTime

@@ -484,6 +484,7 @@ open class DietAPI {
   },
   "mobile" : "mobile",
   "externalId" : "externalId",
+  "fullName" : "fullName",
   "dateOfBirth" : 1,
   "room" : "room",
   "additionalInfoList" : [ {
@@ -634,6 +635,7 @@ open class DietAPI {
   },
   "mobile" : "mobile",
   "externalId" : "externalId",
+  "fullName" : "fullName",
   "dateOfBirth" : 1,
   "room" : "room",
   "additionalInfoList" : [ {
